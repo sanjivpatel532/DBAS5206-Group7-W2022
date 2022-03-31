@@ -71,299 +71,299 @@ VALUES (
 ),
 (
 -- Patient 4
-	'Baker, Mary A',
-	'300 Oak St.',
+	'Blaker, Laura K',
+	'7 Scugog St.',
 	'Oshawa',
 	'ON',
 	'L1R-4E6',
-	'905-555-5555',
+	'905-867-6442',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 5
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Butler, Sandy J',
+	'3010 Eglinton Ave.',
+	'Toronto',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'M4P-1A6',
+	'416-569-4113',
 	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
 -- Patient 6
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'McKeon, Joseph B',
+	'2252  Leduc St.',
+	'Vankleek Hill',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	'K0B-1R0',
+	'613-676-9927',
+	'Male',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
 -- Patient 7
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Potts, Donna J',
+	'3174 Fallon Dr.',
+	'Neustadt',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'N0G-2M0',
+	'519-799-4878',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 8
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Fabian, Elizabeth R',
+	'427 Central Pkwy',
+	'Erin Mills',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	'L5L-3A1',
+	'905-828-2202',
+	'Other',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
 -- Patient 9
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'Moore, Ethel D',
+	'2934 40th St.',
+	'Calgary',
+	'AB',
+	'T2A-1C8',
+	'403-204-3709',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 10
 	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	'2626 chemin Hudson',
+	'Montreal',
+	'QC',
+	'H4J-1M9',
+	'514-291-8633',
+	'Male',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
 -- Patient 11
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'Jordon, Eileen N',
+	'987 Summerfield Blvd',
+	'Camrose',
+	'AB',
+	'T4V-1V4',
+	'780-678-9373',
 	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
 -- Patient 12
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
+	'Cartier, David H',
+	'3985 2nd Street',
+	'Lac Du Bonnet',
+	'MB',
+	'R0E-1A0',
+	'204-345-1753',
+	'Other',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 13
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
+	'Hinkson, Aaron L',
+	'2691 Ostrea Lake Rd',
+	'Musquodoboit Harbour',
+	'NS',
+	'B0J-2L0',
+	'902-878-1402',
+	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 14
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Pilon, Norma J',
+	'2430 Albert Street',
+	'Aylmer',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'N5H-1L2',
+	'519-779-4169',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 15
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Snyder, James R',
+	'332 Reserve St',
+	'Coe Hill',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
+	'K0L-1P0',
+	'613-337-4512',
+	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 16
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Omara, Greta J',
+	'3531 Weston Rd',
+	'Toronto',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'M9N-1G4',
+	'416-333-5038',
 	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
 -- Patient 17
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Stiver, Alex C',
+	'2575 Merivale Road',
+	'Ottawa',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
+	'K2G-3K2',
+	'613-225-0790',
+	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 18
-	'Baker, Mary A',
-	'300 Oak St.',
+	'Jones, James B',
+	'18 Garafraxa St',
 	'Oshawa',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
+	'N0H 2R0',
+	'519-596-0609',
+	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 19
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Weber, Bart D',
+	'4769 Landon St.',
+	'Verner',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	'P0H-2M0',
+	'705-594-3243',
+	'Male',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
 -- Patient 20
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Whitby, Debra R',
+	'4545 Pitt St',
+	'Cornwall',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'K6J 3R2',
+	'613-933-0139',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 21
-	'Baker, Mary A',
-	'300 Oak St.',
+	'Servantes, Helen C',
+	'807 Pitt St',
 	'Oshawa',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'K6J-3R2',
+	'613-936-2494',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 22
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Terry, Cora D',
+	'3940 Lynden Road',
+	'Wasaga Beach',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'L0L-2P0',
+	'705-422-2502',
 	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
 -- Patient 23
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Bales, Natacha S',
+	'2333 Dufferin St.',
+	'Toronto',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'M6H-4B6',
+	'416-539-2319',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 24
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'Holderman, Anna R',
+	'2619 102nd Ave.',
+	'Trail',
+	'BC',
+	'V1R-3W5',
+	'250-231-8630',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 25
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Hou, Ai',
+	'4279 Matheson St',
+	'Kenora',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
+	'P9N-1T8',
+	'807-468-9826',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 26
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	'Yin, Manchu',
+	'1615 Côte Joyeuse',
+	'St Raymond',
+	'QC',
+	'H0H-0H0',
+	'418-340-8860',
+	'Male',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
 -- Patient 27
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Santos, Luiz S',
+	'1131 Eglinton Avenue',
+	'Toronto',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
+	'M4P-1A6',
+	'416-488-4892',
+	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
 -- Patient 28
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'Barros, Guilherme P',
+	'1135 Davis Drive',
+	'Welland',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	'L3B-3Z6',
+	'905-714-6203',
+	'Male',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
 -- Patient 29
-	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
-	'ON',
-	'L1R-4E6',
+	'Kanaan, Husain K',
+	'2985 St. John Street',
+	'Weldon',
+	'SK',
+	'S4P-3Y2',
 	'905-555-5555',
 	'Female',
-	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
 -- Patient 30
 	'Baker, Mary A',
-	'300 Oak St.',
-	'Oshawa',
+	'3531 Weston Rd.',
+	'Ajax',
 	'ON',
-	'L1R-4E6',
-	'905-555-5555',
-	'Female',
+	'M9N-1G4',
+	'416-242-2987',
+	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 )
 GO
