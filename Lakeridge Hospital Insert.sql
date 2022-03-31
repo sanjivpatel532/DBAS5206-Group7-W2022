@@ -134,13 +134,13 @@ GO
 --Insert physcians
 INSERT INTO PHYSICIAN (USER_ID, PHYSICIAN_NAME, TELEPHONE, SPECIALTY_ID)
 VALUES	( 100, 'M. D. Thayer', '250-555-4444', 'P' ),
-		( 101, 'M. D. Thayer', '250-555-4444', 'VIR' ),
-		( 102, 'M. D. Thayer', '250-555-4444', 'T' ),
-		( 103, 'M. D. Thayer', '250-555-4444', 'GYN' ),
-		( 104, 'M. D. Thayer', '250-555-4444', 'MT' ),
-		( 105, 'M. D. Thayer', '250-555-4444', 'M' ),
-		( 106, 'M. D. Thayer', '250-555-4444', 'P' ),
-		( 107, 'M. D. Thayer', '250-555-4444', 'P' )
+		( 101, 'M. D. Green', '905-721-4964', 'VIR' ),
+		( 102, 'M. D. Sooknanan', '905-697-3607', 'T' ),
+		( 103, 'M. D. Shrives', '905-623-2570', 'GYN' ),
+		( 104, 'M. D. Koziar', '905-732-0121', 'MT' ),
+		( 105, 'M. D. Mahmud', '519-657-5434', 'M' ),
+		( 106, 'M. D. Grant', '905-623-2783', 'P' ),
+		( 107, 'M. D. Niro', '905-579-1212', 'P' )
 GO
 
 --Insert Diagnosis
