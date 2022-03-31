@@ -37,6 +37,7 @@ GO
 -- Insert Patient
 INSERT INTO PATIENT (PATIENT_NAME, PATIENT_ADDRESS,CITY,PROVINCE, POSTAL_CODE, TELEPHONE,SEX,STATUS_ID)
 VALUES (
+--  Patient 1
 	'Baker, Mary A',
 	'300 Oak St.',
 	'Oshawa',
@@ -47,31 +48,320 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
+--	Patient 2
 	'Smith, John W',
 	'100 King St.',
 	'Toronto',
 	'ON',
-	'M1K-1J1',
+	'M1K-7J1',
 	'416-645-5655',
 	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
+-- Patient 3
 	'Cook, Ashley L',
 	'80 Queen St.',
 	'Oshawa',
 	'ON',
-	'L1Y-1V1',
-	'905-555-5555',
+	'L1P-3T1',
+	'416-557-8585',
 	'Other',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
+-- Patient 4
 	'Baker, Mary A',
 	'300 Oak St.',
 	'Oshawa',
 	'ON',
-	'L1Y-1V1',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 5
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 6
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 7
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 8
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 9
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 10
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 11
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 12
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 13
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 14
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 15
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 16
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 17
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 18
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 19
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 20
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 21
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 22
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 23
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 24
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 25
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 26
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 27
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 28
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 29
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
+	'905-555-5555',
+	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+(
+-- Patient 30
+	'Baker, Mary A',
+	'300 Oak St.',
+	'Oshawa',
+	'ON',
+	'L1R-4E6',
 	'905-555-5555',
 	'Female',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
