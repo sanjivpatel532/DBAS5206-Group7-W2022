@@ -137,7 +137,7 @@ VALUES (
 ),
 (
 -- Patient 10
-	'Baker, Mary A',
+	'Backster, Addi A',
 	'2626 chemin Hudson',
 	'Montreal',
 	'QC',
@@ -357,7 +357,7 @@ VALUES (
 ),
 (
 -- Patient 30
-	'Baker, Mary A',
+	'Laker, Hans A',
 	'3531 Weston Rd.',
 	'Ajax',
 	'ON',
@@ -374,6 +374,22 @@ VALUES (
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Baker, Mary A' ),
 	GETDATE(),
 	'Allergic reaction to peanuts'
+), (
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Yin, Manchu' ),
+	GETDATE(),
+	'Cancer treatments'
+),(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Kanaan, Husain K' ),
+	GETDATE(),
+	'Abdominal Pain, Gastroscopy investigation'
+),(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S' ),
+	GETDATE(),
+	'General weakness, lab tests for cause'
+),(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Servantes, Helen C' ),
+	GETDATE(),
+	'3 months Pregnancy mark ultra-sound'
 )
 GO
 
@@ -430,12 +446,14 @@ VALUES	( 100, 'M. D. Thayer', '250-555-4444', 'P' ),
 		( 104, 'M. D. Koziar', '905-732-0121', 'MT' ),
 		( 105, 'M. D. Mahmud', '519-657-5434', 'M' ),
 		( 106, 'M. D. Grant', '905-623-2783', 'P' ),
-		( 107, 'M. D. Niro', '905-579-1212', 'P' )
+		( 107, 'M. D. Niro', '905-579-1212', 'R' )
 GO
 
 --Insert Diagnosis
 INSERT INTO DIAGNOSIS (DIAGNOSIS)
-VALUES ( 'HIV' )
+VALUES ( 'HIV' ),
+('Cancer'), 
+('Chrones')
 GO
 
 --Insert Treatment
@@ -504,7 +522,8 @@ INSERT INTO COST_CENTER (DEPARTMENT_NAME)
 VALUES ('Entertainment'),
 ('Room & Board'),
 ('Laboratory'),
-('Pharmacy')
+('Pharmacy'),
+('Radiology')
 GO
 
 --Insert Item
@@ -512,8 +531,13 @@ INSERT INTO ITEM (COST_CENTER_NUMBER, DESCRIPTION, CHARGE)
 VALUES ( 2, 'Semiprivate Room', 200.00 ),
 ( 1, 'Television', 5.00 ),
 ( 4, 'Glucose', 25.00 ),
-( 4, 'Culture', 20.00 ),
-( 3, 'Chest X-ray', 30.00 )
+( 3, 'Culture', 20.00 ),
+( 5, 'Chest X-ray', 30.00 ),
+(5, 'Chemo Therapy', 10.00),
+(2, 'Ward, 4 Beds', 50.00),
+(2, 'Ward, 3 Beds', 75.00),
+(2, 'Private' ,400.00)
+
 GO
 
 --Insert Charges
@@ -525,7 +549,8 @@ GO
 
 --Insert Note 
 INSERT INTO NOTE (ADMISSION_NUMBER, ENTRY)
-VALUES (1000000, 'This note is to confirm that Baker, Mary A, she is suffering from allergies and I recommend you to allow her to discontinue classes for two months.')
+VALUES (1000000, 'This note is to confirm that Baker, Mary A, she is suffering from allergies and I recommend you to allow her to discontinue classes for two months.'),
+(1000001, 'Mr.Yin culture tests returned noting cancer cells, further testing points to prostate, Monthly radiation Treatment sessions have been booked for 4 treatments.')
 GO
 
 --Insert Admission line item
@@ -533,7 +558,8 @@ INSERT INTO ADMISSION_LINE_ITEM
 VALUES (
 	1000000,
 	100
-)
+),
+(1000001, 303)
 GO
 
 --Insert Transaction line item
