@@ -27,7 +27,9 @@ GO
 
 --Insert Transaction
 INSERT INTO CHARGE_TRANSACTION (STATUS_ID, DATE, PAID)
-VALUES (
+VALUES 
+--	Charge 1000
+(
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay'),
 	GETDATE(),
 	12000
@@ -381,27 +383,36 @@ GO
 
 -- Insert Appointment
 INSERT INTO APPOINTMENT (PATIENT_NUMBER, TIME, DESCRIPTION )
-VALUES (
+VALUES 
+-- Appointment 100000000
+(
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Baker, Mary A' ),
 	GETDATE(),
 	'Allergic reaction to peanuts'
-), (
+), 
+-- Appointment 100000001
+(
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Yin, Manchu' ),
 	GETDATE(),
 	'Cancer treatments'
-),(
+),
+-- Appointment 100000002
+(
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Kanaan, Husain K' ),
 	GETDATE(),
 	'Abdominal Pain, Gastroscopy investigation'
-),(
+),
+-- Appointment 100000003
+(
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S' ),
 	GETDATE(),
 	'General weakness, lab tests for cause'
-),(
+),
+-- Appointment 100000004 
+(
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Servantes, Helen C' ),
 	GETDATE(),
-	'3 months Pregnancy mark ultra-sound'
-)
+	'3 months Pregnancy mark ultra-sound')
 GO
 
 -- Insert User Type 
@@ -485,7 +496,9 @@ GO
 
 --Insert Treatment
 INSERT INTO TREATMENT (DIAGNOSIS_NUMBER, PHYSICIAN_NUMBER, PATIENT_NUMBER, DESCRIPTION )
-VALUES (
+VALUES 
+--	100000000
+(
 	100,
 	100,
 	100000,
@@ -499,7 +512,8 @@ GO
 
 --Insert room type
 INSERT INTO ROOM_TYPE (ROOM_TYPE_ID, DESCRIPTION)
-VALUES ( 'SP', 'SemiPrivate' ),
+VALUES 
+( 'SP', 'SemiPrivate' ),
 ( 'PR', 'Private' ),
 ( 'IC', 'Intensive Care' ),
 ( 'W3', 'Ward, 3 Beds' ),
@@ -507,7 +521,8 @@ VALUES ( 'SP', 'SemiPrivate' ),
 
 --Insert Room
 INSERT INTO ROOM (ROOM_NUMBER, ROOM_TYPE_NUMBER)
-VALUES ( 100, 'SP' ),
+VALUES 
+( 100, 'SP' ),
  ( 101, 'SP' ),
  ( 102, 'SP' ),
  ( 103, 'SP' ),
@@ -524,7 +539,8 @@ VALUES ( 100, 'SP' ),
 
 -- Insert Beds
 INSERT INTO BED(ROOM_NUMBER, BED_CHAR, EXTENSION) 
-VALUES (328, 'B', 623 ),
+VALUES 
+(328, 'B', 623 ),
 (328, 'A', 622 ),
 (100, 'A', 274 ),
 (102, 'A', 876 ),
@@ -575,16 +591,25 @@ GO
 
 --Insert Item
 INSERT INTO ITEM (COST_CENTER_NUMBER, DESCRIPTION, CHARGE)
-VALUES ( 2, 'Semiprivate Room', 200.00 ),
+VALUES 
+--	100
+( 2, 'Semiprivate Room', 200.00 ),
+--	101
 ( 1, 'Television', 5.00 ),
+--	102
 ( 4, 'Glucose', 25.00 ),
+--	103
 ( 3, 'Culture', 20.00 ),
+--	104
 ( 5, 'Chest X-ray', 30.00 ),
+--	105
 (5, 'Chemo Therapy', 10.00),
+--	106
 (2, 'Ward, 4 Beds', 50.00),
+--	107
 (2, 'Ward, 3 Beds', 75.00),
+--	108
 (2, 'Private' ,400.00)
-
 GO
 
 --Insert Charges
@@ -599,17 +624,22 @@ GO
 
 --Insert Note 
 INSERT INTO NOTE (ADMISSION_NUMBER, ENTRY)
-VALUES (1000000, 'This note is to confirm that Baker, Mary A, she is suffering from allergies and I recommend you to allow her to discontinue classes for two months.'),
+VALUES 
+-- note 1
+(1000000, 'This note is to confirm that Baker, Mary A, she is suffering from allergies and I recommend you to allow her to discontinue classes for two months.'),
+-- note 2
 (1000001, 'Mr.Yin culture tests returned noting cancer cells, further testing points to prostate, Monthly radiation Treatment sessions have been booked for 4 treatments.')
 GO
 
 --Insert Admission line item
 INSERT INTO ADMISSION_LINE_ITEM (ADMISSION_NUMBER, PATIENT_NUMBER)
 VALUES 
+-- 'Baker, Mary A'
 (
 	1000000,
 	100
 ),
+--	'Yin, Manchu'
 (
 	1000001,
 	126
@@ -618,5 +648,7 @@ GO
 
 --Insert Transaction line item
 INSERT INTO TRANSACTION_LINE_ITEM (TRANSACTION_NUMBER, CHARGE_NUMBER)
-VALUES ( 1000 , 100000 )
+VALUES 
+-- 'Baker, Mary A'
+( 1000 , 100000 )
 GO
