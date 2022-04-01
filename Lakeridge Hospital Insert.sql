@@ -19,9 +19,10 @@ GO
 
 --INSERT FINANCIAL_STATUS
 INSERT INTO FINANCIAL_STATUS (Provider)
-VALUES ( 'Assure' ),
- ( 'Self-Pay' ),
- ( 'ESI' )
+VALUES 
+	( 'Assure' ),
+	( 'Self-Pay' ),
+	( 'ESI' )
 GO
 
 
@@ -417,46 +418,47 @@ GO
 
 -- Insert User Type 
 INSERT INTO USER_TYPE (USER_TYPE)
-VALUES --Admin
-( 'Admin' ),
+VALUES 
+--Admin
+	( 'Admin' ),
 --Physician
-( 'Physician' ),
+	( 'Physician' ),
 --Nurse
-( 'Nurse' ),
+	( 'Nurse' ),
 --Dentist
-( 'Dentist' ),
+	( 'Dentist' ),
 --Receptionist
-( 'Reception' ),
+	( 'Reception' ),
 --Accountant
-( 'Accountant' ),
+	( 'Accountant' ),
 --Pharmicist
-( 'Pharmicist' )
+	( 'Pharmicist' )
 GO
 
 -- Insert User
 INSERT INTO DB_USER (USER_TYPE_NUMBER , PASSWORD) 
 VALUES 
-( (SELECT USER_TYPE_NUMBER FROM USER_TYPE WHERE USER_TYPE = 'Physician' ), '5BAA61E4C9B93F3F0682250B6CF8331B7EE68FD8'  )
+	( (SELECT USER_TYPE_NUMBER FROM USER_TYPE WHERE USER_TYPE = 'Physician' ), '5BAA61E4C9B93F3F0682250B6CF8331B7EE68FD8'  )
 GO
 
 -- Insert table of different specialties
 INSERT INTO PHYSICIAN_SPECIALTY (SPECIALTY_ID, SPECIALTY)
 VALUES 
-( 'P', 'Paediatrics'),
-( 'DT', 'Dentistry'),
-( 'ORT', 'Orthopedics'),
-( 'NRY', 'Neurology'),
-( 'GYN', 'Gynecology'),
-( 'END', 'Endocrinology'),
-( 'DER', 'Dermatology'),
-( 'OC', 'Oncology'),
-( 'RD', 'Radiology'),
-( 'VIR', 'Virology'),
-( 'RS', 'Respiratory'),
-( 'MT', 'Meternal-Fetal'),
-( 'SER', 'Serology'),
-( 'T', 'Trauma'),
-( 'M', 'Mental')
+	( 'P', 'Paediatrics'),
+	( 'DT', 'Dentistry'),
+	( 'ORT', 'Orthopedics'),
+	( 'NRY', 'Neurology'),
+	( 'GYN', 'Gynecology'),
+	( 'END', 'Endocrinology'),
+	( 'DER', 'Dermatology'),
+	( 'OC', 'Oncology'),
+	( 'RD', 'Radiology'),
+	( 'VIR', 'Virology'),
+	( 'RS', 'Respiratory'),
+	( 'MT', 'Meternal-Fetal'),
+	( 'SER', 'Serology'),
+	( 'T', 'Trauma'),
+	( 'M', 'Mental')
 GO
 
 --Insert physcians
@@ -483,31 +485,31 @@ GO
 INSERT INTO DIAGNOSIS (DIAGNOSIS)
 VALUES 
 -- 100
-( 'HIV' ),
+	( 'HIV' ),
 -- 101
-('Cancer'), 
+	('Cancer'), 
 -- 102
-('Chrones'),
+	('Chrones'),
 -- 103
-('Anemia'),
+	('Anemia'),
 -- 104
-('Pregnancy')
+	('Pregnancy')
 GO
 
 --Insert Treatment
 INSERT INTO TREATMENT (DIAGNOSIS_NUMBER, PHYSICIAN_NUMBER, PATIENT_NUMBER, DESCRIPTION )
 VALUES 
 --	100000000
-(
-	100,
+(	100,
 	100,
 	100000,
-	'Ibprofen'
-),
+	'Ibprofen'),
 	(101,
 	107,
 	1000001,
-	'Chemo Therapy Radiation')
+	'Chemo Therapy Radiation'),
+--	100000001
+()
 GO
 
 --Insert room type
