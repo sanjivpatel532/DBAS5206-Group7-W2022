@@ -37,7 +37,7 @@ GO
 -- Insert Patient
 INSERT INTO PATIENT (PATIENT_NAME, PATIENT_ADDRESS,CITY,PROVINCE, POSTAL_CODE, TELEPHONE,SEX,STATUS_ID)
 VALUES (
---  Patient 1
+--  Patient 101
 	'Baker, Mary A',
 	'300 Oak St.',
 	'Oshawa',
@@ -48,7 +48,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
---	Patient 2
+--	Patient 102
 	'Smith, John W',
 	'100 King St.',
 	'Toronto',
@@ -59,7 +59,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
--- Patient 3
+-- Patient 103
 	'Cook, Ashley L',
 	'80 Queen St.',
 	'Oshawa',
@@ -70,7 +70,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
--- Patient 4
+-- Patient 104
 	'Blaker, Laura K',
 	'7 Scugog St.',
 	'Oshawa',
@@ -81,7 +81,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 5
+-- Patient 105
 	'Butler, Sandy J',
 	'3010 Eglinton Ave.',
 	'Toronto',
@@ -92,7 +92,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
--- Patient 6
+-- Patient 106
 	'McKeon, Joseph B',
 	'2252  Leduc St.',
 	'Vankleek Hill',
@@ -103,7 +103,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
--- Patient 7
+-- Patient 107
 	'Potts, Donna J',
 	'3174 Fallon Dr.',
 	'Neustadt',
@@ -114,7 +114,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 8
+-- Patient 108
 	'Fabian, Elizabeth R',
 	'427 Central Pkwy',
 	'Erin Mills',
@@ -125,7 +125,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
--- Patient 9
+-- Patient 109
 	'Moore, Ethel D',
 	'2934 40th St.',
 	'Calgary',
@@ -136,7 +136,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 10
+-- Patient 110
 	'Backster, Addi A',
 	'2626 chemin Hudson',
 	'Montreal',
@@ -147,7 +147,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
--- Patient 11
+-- Patient 111
 	'Jordon, Eileen N',
 	'987 Summerfield Blvd',
 	'Camrose',
@@ -158,7 +158,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
--- Patient 12
+-- Patient 112
 	'Cartier, David H',
 	'3985 2nd Street',
 	'Lac Du Bonnet',
@@ -169,7 +169,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 13
+-- Patient 113
 	'Hinkson, Aaron L',
 	'2691 Ostrea Lake Rd',
 	'Musquodoboit Harbour',
@@ -180,7 +180,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 14
+-- Patient 114
 	'Pilon, Norma J',
 	'2430 Albert Street',
 	'Aylmer',
@@ -191,7 +191,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 15
+-- Patient 115
 	'Snyder, James R',
 	'332 Reserve St',
 	'Coe Hill',
@@ -202,7 +202,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 16
+-- Patient 116
 	'Omara, Greta J',
 	'3531 Weston Rd',
 	'Toronto',
@@ -213,7 +213,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
--- Patient 17
+-- Patient 117
 	'Stiver, Alex C',
 	'2575 Merivale Road',
 	'Ottawa',
@@ -224,7 +224,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 18
+-- Patient 118
 	'Jones, James B',
 	'18 Garafraxa St',
 	'Oshawa',
@@ -235,7 +235,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 19
+-- Patient 119
 	'Weber, Bart D',
 	'4769 Landon St.',
 	'Verner',
@@ -246,7 +246,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
--- Patient 20
+-- Patient 120
 	'Whitby, Debra R',
 	'4545 Pitt St',
 	'Cornwall',
@@ -257,7 +257,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 21
+-- Patient 121
 	'Servantes, Helen C',
 	'807 Pitt St',
 	'Oshawa',
@@ -268,7 +268,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 22
+-- Patient 122
 	'Terry, Cora D',
 	'3940 Lynden Road',
 	'Wasaga Beach',
@@ -279,7 +279,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
--- Patient 23
+-- Patient 123
 	'Bales, Natacha S',
 	'2333 Dufferin St.',
 	'Toronto',
@@ -290,7 +290,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 24
+-- Patient 124
 	'Holderman, Anna R',
 	'2619 102nd Ave.',
 	'Trail',
@@ -301,7 +301,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 25
+-- Patient 125
 	'Hou, Ai',
 	'4279 Matheson St',
 	'Kenora',
@@ -312,7 +312,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 26
+-- Patient 126
 	'Yin, Manchu',
 	'1615 Côte Joyeuse',
 	'St Raymond',
@@ -323,7 +323,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
--- Patient 27
+-- Patient 127
 	'Santos, Luiz S',
 	'1131 Eglinton Avenue',
 	'Toronto',
@@ -334,7 +334,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
--- Patient 28
+-- Patient 128
 	'Barros, Guilherme P',
 	'1135 Davis Drive',
 	'Welland',
@@ -345,7 +345,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Assure')
 ),
 (
--- Patient 29
+-- Patient 129
 	'Kanaan, Husain K',
 	'2985 St. John Street',
 	'Weldon',
@@ -356,7 +356,7 @@ VALUES (
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'Self-Pay')
 ),
 (
--- Patient 30
+-- Patient 130
 	'Laker, Hans A',
 	'3531 Weston Rd.',
 	'Ajax',
@@ -418,7 +418,7 @@ VALUES
 GO
 
 -- Insert table of different specialties
-INSERT INTO PHYSICIAN_SPECIALTY 
+INSERT INTO PHYSICIAN_SPECIALTY (SPECIALTY_ID, SPECIALTY)
 VALUES 
 ( 'P', 'Paediatrics'),
 ( 'DT', 'Dentistry'),
@@ -451,9 +451,17 @@ GO
 
 --Insert Diagnosis
 INSERT INTO DIAGNOSIS (DIAGNOSIS)
-VALUES ( 'HIV' ),
+VALUES 
+-- 100
+( 'HIV' ),
+-- 101
 ('Cancer'), 
-('Chrones')
+-- 102
+('Chrones'),
+-- 103
+('Anemia'),
+-- 104
+('Pregnancy')
 GO
 
 --Insert Treatment
@@ -463,10 +471,15 @@ VALUES (
 	100,
 	100000,
 	'Ibprofen'
-)GO
+),
+	(101,
+	107,
+	1000001,
+	'Chemo Therapy Radiation')
+GO
 
 --Insert room type
-INSERT INTO ROOM_TYPE 
+INSERT INTO ROOM_TYPE (ROOM_TYPE_ID, DESCRIPTION)
 VALUES ( 'SP', 'SemiPrivate' ),
 ( 'PR', 'Private' ),
 ( 'IC', 'Intensive Care' ),
@@ -474,7 +487,7 @@ VALUES ( 'SP', 'SemiPrivate' ),
 ( 'W4', 'Ward, 4 Beds' )GO
 
 --Insert Room
-INSERT INTO ROOM 
+INSERT INTO ROOM (ROOM_NUMBER, ROOM_TYPE_NUMBER)
 VALUES ( 100, 'SP' ),
  ( 101, 'SP' ),
  ( 102, 'SP' ),
@@ -491,7 +504,7 @@ VALUES ( 100, 'SP' ),
  GO
 
 -- Insert Beds
-INSERT INTO BED 
+INSERT INTO BED(ROOM_NUMBER, BED_CHAR, EXTENSION) 
 VALUES (328, 'B', 623 ),
 (328, 'A', 622 ),
 (100, 'A', 274 ),
@@ -509,20 +522,35 @@ GO
 
 --Insert Admission
 INSERT INTO ADMISSION( PATIENT_NUMBER, DATE_ADMITTED, DATE_DISCHARGED, ROOM_NUMBER, BED_CHAR)
-VALUES ( (SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Baker, Mary A' ), 
+VALUES 
+--	1000000
+( (SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Baker, Mary A' ), 
 	GETDATE(),
 	NULL,  --Has not yet been discharged
 	328,
+	'B'
+),
+--	1000001
+( (SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Yin, Manchu' ), 
+	GETDATE(),
+	NULL,  --Has not yet been discharged
+	303,
 	'B'
 )
 GO
 
 --Insert Cost Center
 INSERT INTO COST_CENTER (DEPARTMENT_NAME) 
-VALUES ('Entertainment'),
+VALUES 
+--	1
+('Entertainment'),
+--	2
 ('Room & Board'),
+--	3
 ('Laboratory'),
+--	4
 ('Pharmacy'),
+--	5
 ('Radiology')
 GO
 
@@ -542,9 +570,12 @@ GO
 
 --Insert Charges
 INSERT INTO CHARGE (ADMISSION_NUMBER, ITEM_CODE, QUANTITY, DATE_CHARGED )
-VALUES ( 1000000, (SELECT ITEM_CODE FROM ITEM WHERE DESCRIPTION = 'Semiprivate Room'), 3, GETDATE()),
+VALUES 
+--		'Baker, Mary A'  
+( 1000000, (SELECT ITEM_CODE FROM ITEM WHERE DESCRIPTION = 'Semiprivate Room'), 3, GETDATE()),
 ( 1000000, (SELECT ITEM_CODE FROM ITEM WHERE DESCRIPTION = 'Television'), 1, GETDATE()),
 ( 1000000, (SELECT ITEM_CODE FROM ITEM WHERE DESCRIPTION = 'Culture'), 1, GETDATE())
+--		'Yin, Manchu'
 GO
 
 --Insert Note 
@@ -554,15 +585,19 @@ VALUES (1000000, 'This note is to confirm that Baker, Mary A, she is suffering f
 GO
 
 --Insert Admission line item
-INSERT INTO ADMISSION_LINE_ITEM
-VALUES (
+INSERT INTO ADMISSION_LINE_ITEM (ADMISSION_NUMBER, PATIENT_NUMBER)
+VALUES 
+(
 	1000000,
 	100
 ),
-(1000001, 303)
+(
+	1000001,
+	126
+)
 GO
 
 --Insert Transaction line item
-INSERT INTO TRANSACTION_LINE_ITEM 
+INSERT INTO TRANSACTION_LINE_ITEM (TRANSACTION_NUMBER, CHARGE_NUMBER)
 VALUES ( 1000 , 100000 )
 GO
