@@ -451,14 +451,20 @@ GO
 --Insert physcians
 INSERT INTO PHYSICIAN (USER_ID, PHYSICIAN_NAME, TELEPHONE, SPECIALTY_ID)
 VALUES	
---
+-- Physician 100
 		( 100, 'M. D. Thayer', '250-555-4444', 'P' ),
+-- Physician 101
 		( 101, 'M. D. Green', '905-721-4964', 'VIR' ),
+-- Physician 102
 		( 102, 'M. D. Sooknanan', '905-697-3607', 'T' ),
+-- Physician 103
 		( 103, 'M. D. Shrives', '905-623-2570', 'GYN' ),
+-- Physician 104
 		( 104, 'M. D. Koziar', '905-732-0121', 'MT' ),
+-- Physician 105
 		( 105, 'M. D. Mahmud', '519-657-5434', 'M' ),
 		( 106, 'M. D. Grant', '905-623-2783', 'P' ),
+-- Physician 107
 		( 107, 'M. D. Niro', '905-579-1212', 'R' )
 GO
 
