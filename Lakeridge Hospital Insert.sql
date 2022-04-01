@@ -37,7 +37,7 @@ GO
 -- Insert Patient
 INSERT INTO PATIENT (PATIENT_NAME, PATIENT_ADDRESS,CITY,PROVINCE, POSTAL_CODE, TELEPHONE,SEX,STATUS_ID)
 VALUES (
---  Patient 101
+--  Patient 100
 	'Baker, Mary A',
 	'300 Oak St.',
 	'Oshawa',
@@ -45,6 +45,17 @@ VALUES (
 	'L1Y-1V1',
 	'905-555-5555',
 	'Female',
+	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
+),
+ (
+--  Patient 101
+	'Perkins, John M',
+	'4315 James St.',
+	'Mount Pleasant',
+	'ON',
+	'N0E-1K0',
+	'519-484-8730',
+	'Male',
 	(SELECT STATUS_ID FROM FINANCIAL_STATUS WHERE PROVIDER = 'ESI')
 ),
 (
@@ -439,7 +450,9 @@ GO
 
 --Insert physcians
 INSERT INTO PHYSICIAN (USER_ID, PHYSICIAN_NAME, TELEPHONE, SPECIALTY_ID)
-VALUES	( 100, 'M. D. Thayer', '250-555-4444', 'P' ),
+VALUES	
+--
+		( 100, 'M. D. Thayer', '250-555-4444', 'P' ),
 		( 101, 'M. D. Green', '905-721-4964', 'VIR' ),
 		( 102, 'M. D. Sooknanan', '905-697-3607', 'T' ),
 		( 103, 'M. D. Shrives', '905-623-2570', 'GYN' ),
