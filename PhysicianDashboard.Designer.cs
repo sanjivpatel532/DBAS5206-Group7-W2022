@@ -6,7 +6,7 @@ namespace LakeridgeCommunityHospital
 {
 	public partial class Form1 : MaterialForm
 	{
-		
+
 
 		/// <summary>
 		/// Required designer variable.
@@ -44,17 +44,17 @@ namespace LakeridgeCommunityHospital
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
-			this.label2 = new System.Windows.Forms.Label();
 			this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-			this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
 			this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+			this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+			this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.label2 = new System.Windows.Forms.Label();
+			this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
 			this.lstBoxColDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -122,51 +122,6 @@ namespace LakeridgeCommunityHospital
 			this.panel1.Size = new System.Drawing.Size(954, 705);
 			this.panel1.TabIndex = 5;
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(119, 13);
-			this.label1.Name = "label1";
-			this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label1.Size = new System.Drawing.Size(218, 24);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Patent Record Logs:";
-			this.label1.Click += new System.EventHandler(this.label1_Click);
-			// 
-			// materialListView1
-			// 
-			this.materialListView1.AutoSizeTable = false;
-			this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lstBoxColDate,
-            this.columnHeader1});
-			this.materialListView1.Depth = 0;
-			this.materialListView1.FullRowSelect = true;
-			this.materialListView1.HideSelection = false;
-			this.materialListView1.Location = new System.Drawing.Point(13, 50);
-			this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
-			this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-			this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-			this.materialListView1.Name = "materialListView1";
-			this.materialListView1.OwnerDraw = true;
-			this.materialListView1.Size = new System.Drawing.Size(425, 459);
-			this.materialListView1.TabIndex = 2;
-			this.materialListView1.UseCompatibleStateImageBehavior = false;
-			this.materialListView1.View = System.Windows.Forms.View.Details;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(589, 13);
-			this.label2.Name = "label2";
-			this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.label2.Size = new System.Drawing.Size(0, 24);
-			this.label2.TabIndex = 6;
-			this.label2.Click += new System.EventHandler(this.label2_Click);
-			// 
 			// materialTabControl1
 			// 
 			this.materialTabControl1.Controls.Add(this.tabPage1);
@@ -193,29 +148,24 @@ namespace LakeridgeCommunityHospital
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Selected  Note View";
 			// 
-			// tabPage2
+			// materialButton2
 			// 
-			this.tabPage2.Location = new System.Drawing.Point(4, 27);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(499, 465);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Add New Note";
-			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// materialMultiLineTextBox1
-			// 
-			this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.materialMultiLineTextBox1.Depth = 0;
-			this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.materialMultiLineTextBox1.Location = new System.Drawing.Point(0, 3);
-			this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
-			this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-			this.materialMultiLineTextBox1.Size = new System.Drawing.Size(499, 391);
-			this.materialMultiLineTextBox1.TabIndex = 0;
-			this.materialMultiLineTextBox1.Text = "";
+			this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+			this.materialButton2.Depth = 0;
+			this.materialButton2.HighEmphasis = true;
+			this.materialButton2.Icon = null;
+			this.materialButton2.Location = new System.Drawing.Point(291, 411);
+			this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialButton2.Name = "materialButton2";
+			this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+			this.materialButton2.Size = new System.Drawing.Size(158, 36);
+			this.materialButton2.TabIndex = 2;
+			this.materialButton2.Text = "materialButton2";
+			this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+			this.materialButton2.UseAccentColor = false;
+			this.materialButton2.UseVisualStyleBackColor = true;
 			// 
 			// materialButton1
 			// 
@@ -236,24 +186,62 @@ namespace LakeridgeCommunityHospital
 			this.materialButton1.UseAccentColor = false;
 			this.materialButton1.UseVisualStyleBackColor = true;
 			// 
-			// materialButton2
+			// materialMultiLineTextBox1
 			// 
-			this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-			this.materialButton2.Depth = 0;
-			this.materialButton2.HighEmphasis = true;
-			this.materialButton2.Icon = null;
-			this.materialButton2.Location = new System.Drawing.Point(291, 411);
-			this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-			this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-			this.materialButton2.Name = "materialButton2";
-			this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-			this.materialButton2.Size = new System.Drawing.Size(158, 36);
-			this.materialButton2.TabIndex = 2;
-			this.materialButton2.Text = "materialButton2";
-			this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-			this.materialButton2.UseAccentColor = false;
-			this.materialButton2.UseVisualStyleBackColor = true;
+			this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.materialMultiLineTextBox1.Depth = 0;
+			this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.materialMultiLineTextBox1.Location = new System.Drawing.Point(0, 3);
+			this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
+			this.materialMultiLineTextBox1.Size = new System.Drawing.Size(499, 391);
+			this.materialMultiLineTextBox1.TabIndex = 0;
+			this.materialMultiLineTextBox1.Text = "";
+			// 
+			// tabPage2
+			// 
+			this.tabPage2.Location = new System.Drawing.Point(4, 27);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new System.Drawing.Size(499, 465);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "Add New Note";
+			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(589, 13);
+			this.label2.Name = "label2";
+			this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label2.Size = new System.Drawing.Size(0, 24);
+			this.label2.TabIndex = 6;
+			this.label2.Click += new System.EventHandler(this.label2_Click);
+			// 
+			// materialListView1
+			// 
+			this.materialListView1.AutoSizeTable = false;
+			this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstBoxColDate,
+            this.columnHeader1});
+			this.materialListView1.Depth = 0;
+			this.materialListView1.FullRowSelect = true;
+			this.materialListView1.HideSelection = false;
+			this.materialListView1.Location = new System.Drawing.Point(13, 50);
+			this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
+			this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
+			this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+			this.materialListView1.Name = "materialListView1";
+			this.materialListView1.OwnerDraw = true;
+			this.materialListView1.Size = new System.Drawing.Size(425, 635);
+			this.materialListView1.TabIndex = 2;
+			this.materialListView1.UseCompatibleStateImageBehavior = false;
+			this.materialListView1.View = System.Windows.Forms.View.Details;
 			// 
 			// lstBoxColDate
 			// 
@@ -265,6 +253,18 @@ namespace LakeridgeCommunityHospital
 			this.columnHeader1.Text = "Note Reason";
 			this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.columnHeader1.Width = 200;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(119, 13);
+			this.label1.Name = "label1";
+			this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.label1.Size = new System.Drawing.Size(218, 24);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "Patent Record Logs:";
+			this.label1.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// groupBox1
 			// 
