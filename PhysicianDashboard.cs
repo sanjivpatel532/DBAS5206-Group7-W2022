@@ -43,5 +43,15 @@ namespace LakeridgeCommunityHospital
 		{
 
 		}
-	}
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -23,5 +23,10 @@ namespace LakeridgeCommunityHospital
 			materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 			materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo400, Primary.Indigo700, Primary.Indigo200, Accent.LightBlue200, TextShade.WHITE);
 		}
-	}
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
