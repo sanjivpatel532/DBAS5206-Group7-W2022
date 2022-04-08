@@ -328,7 +328,7 @@ VALUES (
 (
 -- Patient 126
 	'Yin, Manchu',
-	'1615 Côte Joyeuse',
+	'1615 CÃ´te Joyeuse',
 	'St Raymond',
 	'QC',
 	'H0H-0H0',
@@ -647,6 +647,29 @@ VALUES
 	126
 )
 GO
+
+--Create table of bills
+INSERT INTO BILL(DATE_MADE)
+VALUES 
+--1000
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+( GETDATE() ),
+--1010
+( GETDATE() )
+
+--Create table for bill items
+INSERT INTO BILL_LINE_ITEM 
+VALUES 
+-- 'Baker, Mary A'
+( 100000, 1000 )
 
 --Insert Transaction line item
 INSERT INTO TRANSACTION_LINE_ITEM (TRANSACTION_NUMBER, CHARGE_NUMBER)
