@@ -164,6 +164,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LakeRidgeHospitalDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LakeRidgeHospitalDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PhysicianDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +199,17 @@
     <EmbeddedResource Include="RoomUtilizationDashboard.resx">
       <DependentUpon>RoomUtilizationDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="LakeRidgeHospitalDB.xsc">
+      <DependentUpon>LakeRidgeHospitalDB.xsd</DependentUpon>
+    </None>
+    <None Include="LakeRidgeHospitalDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LakeRidgeHospitalDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LakeRidgeHospitalDB.xss">
+      <DependentUpon>LakeRidgeHospitalDB.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

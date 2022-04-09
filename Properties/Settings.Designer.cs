@@ -22,5 +22,16 @@ namespace LakeridgeCommunityHospital.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KUROMATSU-MSI\\SQLEXPRESS;Initial Catalog=LakeRidgeHospital;Integrated" +
+            " Security=True")]
+        public string LakeRidgeHospitalConnectionString {
+            get {
+                return ((string)(this["LakeRidgeHospitalConnectionString"]));
+            }
+        }
     }
 }
