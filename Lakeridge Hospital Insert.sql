@@ -394,26 +394,93 @@ VALUES
 -- Appointment 100000001
 (
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Yin, Manchu' ),
-	GETDATE(),
+	convert(varchar, '2021-02-15 06:30 AM', 0),
 	'Cancer treatments'
 ),
 -- Appointment 100000002
 (
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Kanaan, Husain K' ),
-	GETDATE(),
+	convert(varchar, '2008-03-26 11:32 AM', 0),
 	'Abdominal Pain, Gastroscopy investigation'
 ),
 -- Appointment 100000003
 (
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S' ),
-	GETDATE(),
+	convert(varchar ,'2022-03-26 11:32 AM',0),
 	'General weakness, lab tests for cause'
 ),
 -- Appointment 100000004 
 (
 	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Servantes, Helen C' ),
 	GETDATE(),
-	'3 months Pregnancy mark ultra-sound')
+	'3 months Pregnancy mark ultra-sound'
+),
+-- Appointment 100000005 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000006 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000007 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000008 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000009 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000010 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000011 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000012 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000013 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000014 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+),
+-- Appointment 100000015 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
+	convert(varchar, '2008-08-26 11:32', 0),
+	''
+)
 GO
 
 -- Insert User Type 
@@ -493,7 +560,59 @@ VALUES
 -- 103
 	('Anemia'),
 -- 104
-	('Pregnancy')
+	('Fibroid Detection'),
+-- 105
+	('Depression'), 
+-- 106
+	('Seizure Disorder'),
+-- 107
+	('Male Menopause'),
+-- 108
+	('High Blood Pressure'),
+-- 109
+	('Colorectal Cancer'),
+--110
+	('Alzheimers'),
+--111
+	('Breast Cancer'),
+--112
+	('COPD'),
+--113
+	('Lukemias'),
+--114
+	('Hypothydoidism'),
+-- 115
+	('Silver Root cause'),
+--116
+	('Viral Infection'),
+--117
+	('Prostate Cancer'),
+--118
+	('Osteoarthritis'),
+--119
+	('Fibromyalgia'),
+--120
+	('Glaucoma'),
+--121
+	('Viral Hepatitis'),
+--122
+	('Upper Respiratory Infection'),
+--123
+	('Necrotizing Fascitis'),
+--124
+	('Cystic Fibrosis'),
+--125
+	('Leukodystrophies'),
+--126
+	('MCADD'),
+--127
+	('Huntington Disease'),
+--128
+	('Pregnancy'),
+--129
+	('Arginase Deficiency')
+
+
 GO
 
 --Insert Treatment
@@ -645,7 +764,94 @@ VALUES
 (
 	1000001,
 	126
+),
+-- ‘Perkins, John M’
+(
+	1000011,
+	101
+),
+-- ‘Smith, John Wu’
+(
+	1000002,
+	102
+),
+-- ‘Cook Ashley L’
+(
+	1000003,
+	103
+),
+-- ‘Blaker, Lara K’
+(
+	1000004,
+	104
+),
+-- ‘Butler Sandy J’
+(
+	1000005,
+	105
+),
+-- 'Fabian, Elizabeth R’
+(
+	1000008,
+	108
+),
+-- ‘Moore, Ethel D’
+(
+	1000009,
+	109
+),
+-- ‘Baxter, Addi A’
+(
+	1000010,
+	110
+),
+-- 'Jordon, Eileen N'
+(
+	1000011,
+	111
+),
+-- 'Pilon, Norma J'
+(
+	1000007,
+	114
+),
+-- 'Snyder, James R',
+(
+	1000008,
+	115
+),
+-- 'Stiver, Alex C'
+(
+	1000012,
+	117
+),
+-- 'Whitby, Debra R'
+(
+	1000013,
+	120
+),
+-- 'Servantes, Helen C'
+(
+	1000005,
+	121
+),
+-- ‘Bales, Natacha S’
+(
+	1000006,
+	123
+),
+-- 'Santos, Luiz S'
+(
+	1000014,
+	127
+),
+-- 'Kanaan, Husain K'
+(
+	1000015,
+	129
 )
+
+
 GO
 
 --Create table of bills
