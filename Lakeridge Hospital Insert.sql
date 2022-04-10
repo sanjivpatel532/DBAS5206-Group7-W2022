@@ -20,8 +20,11 @@ GO
 --INSERT FINANCIAL_STATUS
 INSERT INTO FINANCIAL_STATUS (Provider)
 VALUES 
+--	100
 	( 'Assure' ),
+-- 101
 	( 'Self-Pay' ),
+--102
 	( 'ESI' )
 GO
 
@@ -417,88 +420,113 @@ VALUES
 ),
 -- Appointment 100000005 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Bales, Natacha S'),
+	convert(varchar, '2021-05-18 06:30 AM', 0),
+	'MRI Scan'
 ),
 -- Appointment 100000006 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Laker, Hans A'),
+	convert(varchar, '2022-04-10 11:32 AM', 0),
+	'Galactosemia (GALT deficiency)'
 ),
 -- Appointment 100000007 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Whitby, Debra R'),
+	convert(varchar, '2022-04-10 10:30 AM', 0),
+	'Integument Surgery'
 ),
 -- Appointment 100000008 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Weber, Bart D'),
+	convert(varchar, '2022-08-26 11:32 AM', 0),
 	''
 ),
 -- Appointment 100000009 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Jones, James B'),
+	convert(varchar, '2022-08-26 11:30 AM', 0),
+	'Consult on new treatment to control condition'
 ),
 -- Appointment 100000010 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Stiver, Alex C'),
+	convert(varchar, '2022-06-06 06:30 AM', 0),
+	'Laser treatment for occular diagnosis to prevent further vision loss'
 ),
 -- Appointment 100000011 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Snyder, James R'),
+	convert(varchar, '2022-07-16 06:30 AM', 0),
+	'Self-injection assistance for hormone replacement therapy'
 ),
 -- Appointment 100000012 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Omara, Greta J'),
+	convert(varchar, '2022-06-06 10:30', 0),
+	'Therapy sessions assistance for physical condition'
 ),
 -- Appointment 100000013 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Hinkson, Aaron L'),
+	convert(varchar, '2022-05-26 06:30 AM', 0),
+	'Investigation for neck growth to confirm thyroid condition'
 ),
 -- Appointment 100000014 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Jordon, Eileen N'),
+	getDate(),
+	'Seizure cause investigation and electrical stimulation therapy treatment'
 ),
 -- Appointment 100000015 
 (
-	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Santos, Luiz S'),
-	convert(varchar, '2008-08-26 11:32', 0),
-	''
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Potts, Donna J'),
+	convert(varchar, '2022-05-16 11:30 AM', 0),
+	'Medication Prescription Evaluation'
+),
+-- Appointment 100000016 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Butler Sandy J'),
+	convert(varchar, '2022-03-19 11:30 AM', 0),
+	'Blood Test’ and Medication Prescription'
+),
+--  Appointment 100000017 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Baker, Mary A'),
+	convert(varchar, '2022-03-13 11:30 AM', 0),
+	'Medication Prescription Evaluation'
+),
+--  Appointment 100000018 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Baker, Mary A'),
+	convert(varchar, '2022-02-12 11:30 AM', 0),
+	'Blood Test’ and Medication Prescription'
+),
+--  Appointment 100000019 
+(
+	(SELECT PATIENT_NUMBER FROM PATIENT WHERE PATIENT_NAME = 'Baker, Mary A'),
+	convert(varchar, '2022-01-16 11:30 AM', 0),
+	'Blood Test’ and Medication Prescription'
 )
+
 GO
 
 -- Insert User Type 
 INSERT INTO USER_TYPE (USER_TYPE)
 VALUES 
---Admin
+--Admin 1
 	( 'Admin' ),
---Physician
+--Physician   2
 	( 'Physician' ),
---Nurse
+--Nurse  3
 	( 'Nurse' ),
---Dentist
+--Dentist  4
 	( 'Dentist' ),
---Receptionist
+--Receptionist 5
 	( 'Reception' ),
---Accountant
+--Accountant   6
 	( 'Accountant' ),
---Pharmicist
+--Pharmicist   7
 	( 'Pharmicist' )
 GO
 
@@ -543,6 +571,7 @@ VALUES
 		( 104, 'M. D. Koziar', '905-732-0121', 'MT' ),
 -- Physician 105
 		( 105, 'M. D. Mahmud', '519-657-5434', 'M' ),
+--	Physician 106
 		( 106, 'M. D. Grant', '905-623-2783', 'P' ),
 -- Physician 107
 		( 107, 'M. D. Niro', '905-579-1212', 'R' )
@@ -619,16 +648,120 @@ GO
 INSERT INTO TREATMENT (DIAGNOSIS_NUMBER, PHYSICIAN_NUMBER, PATIENT_NUMBER, DESCRIPTION )
 VALUES 
 --	100000000
-(	100,
-	100,
+(	104,
+	105,
 	100000,
-	'Ibprofen'),
+	'Fibroid Removal Treatment’'),
+--	100000001
 	(101,
 	107,
-	1000001,
+	1000026,
 	'Chemo Therapy Radiation'),
---	100000001
-()
+--	100000002
+(
+	109,
+	107,
+	100009,
+	'Colonoscopy and blood Test'
+),
+--	100000003
+(
+	106,
+	100,
+	100011,
+	'Responsive Neurostimulation'
+),
+--	100000004
+(
+	112,
+	106,
+	100013,
+	'Pulmonary rehabilitation program'
+),
+--	100000005
+(
+	114,
+	100,
+	100014,
+	'Levothyroxine'
+),
+--	100000006
+(
+	107,
+	105,
+	100015,
+	'Testosterone Replacement Therapy'
+),
+--	100000007
+(
+	119,
+	104,
+	100016,
+	'Cognitive Behavioral Therapy'
+),
+--	100000008
+(
+	120,
+	101,
+	100017,
+	'Selective laser Trabeculoplasty'
+),
+--	100000009
+(
+	121,
+	106,
+	100018,
+	'Daklinza'
+),
+--	100000010
+(
+	122,
+	103,
+	100019,
+	'Prednisone'
+),
+--	100000011
+(
+	123,
+	102,
+	100020,
+	'Sergical Removal'
+),
+--	100000012
+(
+	128,
+	103,
+	100021,
+	'prenatal vitamins'
+),
+--	100000013
+(
+	103,
+	102,
+	100027,
+	'Iron'
+),
+--	100000014
+(
+	102,
+	101,
+	100029,
+	'Gastroscopy Preparation Kit'
+),
+--	100000015
+(
+	111,
+	107,
+	100004,
+	'Mammography'
+),
+--	100000016
+(
+	116,
+	105,
+	100005,
+	'Antibiotics'
+)
 GO
 
 --Insert room type
