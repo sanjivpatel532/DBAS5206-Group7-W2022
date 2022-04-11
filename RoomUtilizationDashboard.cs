@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,9 @@ using MaterialSkin.Controls;
 
 namespace LakeridgeCommunityHospital
 {
-	public partial class RoomUtilizationDashboard : MaterialForm 
+	public partial class RoomUtilizationDashboard : MaterialForm
 	{
+		
 		public RoomUtilizationDashboard()
 		{
 			InitializeComponent();
@@ -22,11 +24,15 @@ namespace LakeridgeCommunityHospital
 			materialSkinManager.AddFormToManage(this);
 			materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 			materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo400, Primary.Indigo700, Primary.Indigo200, Accent.LightBlue200, TextShade.WHITE);
+
+
+
 		}
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
 
-        }
+		private void FillDVG()
+		{
+
+		}
     }
 }

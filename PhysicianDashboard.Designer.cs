@@ -34,19 +34,16 @@ namespace LakeridgeCommunityHospital
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.ListBox lstBoxPatientDetailsView;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-			this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.dvgPatientListTable = new System.Windows.Forms.DataGridView();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.tbAddNewNote = new MaterialSkin.Controls.MaterialTabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tbAddNewNote = new System.Windows.Forms.TabControl();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.mtlTextBoxNoteSelect = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.tbxNewNote = new System.Windows.Forms.RichTextBox();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.btnAddNote = new MaterialSkin.Controls.MaterialButton();
+			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.lstViewPatientNoteLog = new MaterialSkin.Controls.MaterialListView();
 			this.lstBoxColDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,32 +51,33 @@ namespace LakeridgeCommunityHospital
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblPatientDetails = new System.Windows.Forms.GroupBox();
 			this.btnAddTreatment = new MaterialSkin.Controls.MaterialButton();
+			this.lblStripStatus = new System.Windows.Forms.Label();
+			this.slbStatusConfirmation = new System.Windows.Forms.ToolStripStatusLabel();
+			this.sStrpStatusBar = new System.Windows.Forms.StatusStrip();
 			this.dvgColAdmittion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dvgColAdmitted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dvgColDischarged = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Date_Discharged = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dvgColAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dvgColPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			lstBoxPatientDetailsView = new System.Windows.Forms.ListBox();
 			((System.ComponentModel.ISupportInitialize)(this.dvgPatientListTable)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.tbAddNewNote.SuspendLayout();
-			this.tabPage1.SuspendLayout();
-			this.tabPage2.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			this.tabPage4.SuspendLayout();
 			this.lblPatientDetails.SuspendLayout();
+			this.sStrpStatusBar.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// notifyIcon1
+			// lstBoxPatientDetailsView
 			// 
-			this.notifyIcon1.Text = "notifyIcon1";
-			this.notifyIcon1.Visible = true;
-			// 
-			// statusStrip1
-			// 
-			this.statusStrip1.Location = new System.Drawing.Point(3, 775);
-			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(1490, 22);
-			this.statusStrip1.TabIndex = 3;
-			this.statusStrip1.Text = "statusStrip1";
+			lstBoxPatientDetailsView.BackColor = System.Drawing.Color.LightSteelBlue;
+			lstBoxPatientDetailsView.FormattingEnabled = true;
+			lstBoxPatientDetailsView.ItemHeight = 25;
+			lstBoxPatientDetailsView.Location = new System.Drawing.Point(18, 31);
+			lstBoxPatientDetailsView.Name = "lstBoxPatientDetailsView";
+			lstBoxPatientDetailsView.Size = new System.Drawing.Size(729, 304);
+			lstBoxPatientDetailsView.TabIndex = 9;
 			// 
 			// dvgPatientListTable
 			// 
@@ -89,7 +87,7 @@ namespace LakeridgeCommunityHospital
 			this.dvgPatientListTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dvgColAdmittion,
             this.dvgColAdmitted,
-            this.dvgColDischarged,
+            this.Date_Discharged,
             this.dvgColAppointment,
             this.dvgColPatient});
 			this.dvgPatientListTable.GridColor = System.Drawing.Color.Azure;
@@ -107,32 +105,28 @@ namespace LakeridgeCommunityHospital
 			this.panel1.Location = new System.Drawing.Point(778, 75);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(712, 697);
-			this.panel1.TabIndex = 5;
+			this.panel1.TabIndex = 0;
 			// 
 			// tbAddNewNote
 			// 
-			this.tbAddNewNote.Controls.Add(this.tabPage1);
-			this.tbAddNewNote.Controls.Add(this.tabPage2);
-			this.tbAddNewNote.Depth = 0;
-			this.tbAddNewNote.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.tbAddNewNote.Location = new System.Drawing.Point(343, 40);
-			this.tbAddNewNote.MouseState = MaterialSkin.MouseState.HOVER;
-			this.tbAddNewNote.Multiline = true;
+			this.tbAddNewNote.Controls.Add(this.tabPage3);
+			this.tbAddNewNote.Controls.Add(this.tabPage4);
+			this.tbAddNewNote.Location = new System.Drawing.Point(343, 50);
 			this.tbAddNewNote.Name = "tbAddNewNote";
 			this.tbAddNewNote.SelectedIndex = 0;
-			this.tbAddNewNote.Size = new System.Drawing.Size(354, 645);
-			this.tbAddNewNote.TabIndex = 7;
+			this.tbAddNewNote.Size = new System.Drawing.Size(351, 635);
+			this.tbAddNewNote.TabIndex = 0;
 			// 
-			// tabPage1
+			// tabPage3
 			// 
-			this.tabPage1.BackColor = System.Drawing.Color.LightSteelBlue;
-			this.tabPage1.Controls.Add(this.mtlTextBoxNoteSelect);
-			this.tabPage1.Location = new System.Drawing.Point(4, 27);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(346, 614);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Selected  Note View";
+			this.tabPage3.Controls.Add(this.mtlTextBoxNoteSelect);
+			this.tabPage3.Location = new System.Drawing.Point(4, 27);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(343, 604);
+			this.tabPage3.TabIndex = 0;
+			this.tabPage3.Text = "Selected Note View";
+			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
 			// mtlTextBoxNoteSelect
 			// 
@@ -141,34 +135,24 @@ namespace LakeridgeCommunityHospital
 			this.mtlTextBoxNoteSelect.Depth = 0;
 			this.mtlTextBoxNoteSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.mtlTextBoxNoteSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.mtlTextBoxNoteSelect.Location = new System.Drawing.Point(9, 6);
+			this.mtlTextBoxNoteSelect.Location = new System.Drawing.Point(3, 3);
 			this.mtlTextBoxNoteSelect.MouseState = MaterialSkin.MouseState.HOVER;
 			this.mtlTextBoxNoteSelect.Name = "mtlTextBoxNoteSelect";
-			this.mtlTextBoxNoteSelect.Size = new System.Drawing.Size(331, 608);
+			this.mtlTextBoxNoteSelect.Size = new System.Drawing.Size(334, 601);
 			this.mtlTextBoxNoteSelect.TabIndex = 0;
 			this.mtlTextBoxNoteSelect.Text = "";
 			// 
-			// tabPage2
+			// tabPage4
 			// 
-			this.tabPage2.AllowDrop = true;
-			this.tabPage2.BackColor = System.Drawing.Color.Gray;
-			this.tabPage2.Controls.Add(this.tbxNewNote);
-			this.tabPage2.Controls.Add(this.btnAddNote);
-			this.tabPage2.Location = new System.Drawing.Point(4, 27);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.tabPage2.Size = new System.Drawing.Size(346, 614);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Add New Note";
-			// 
-			// tbxNewNote
-			// 
-			this.tbxNewNote.Location = new System.Drawing.Point(6, 3);
-			this.tbxNewNote.Name = "tbxNewNote";
-			this.tbxNewNote.Size = new System.Drawing.Size(337, 564);
-			this.tbxNewNote.TabIndex = 0;
-			this.tbxNewNote.Text = "";
+			this.tabPage4.Controls.Add(this.btnAddNote);
+			this.tabPage4.Controls.Add(this.richTextBox1);
+			this.tabPage4.Location = new System.Drawing.Point(4, 27);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(343, 604);
+			this.tabPage4.TabIndex = 1;
+			this.tabPage4.Text = "Add New Note";
+			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
 			// btnAddNote
 			// 
@@ -177,17 +161,25 @@ namespace LakeridgeCommunityHospital
 			this.btnAddNote.Depth = 0;
 			this.btnAddNote.HighEmphasis = true;
 			this.btnAddNote.Icon = null;
-			this.btnAddNote.Location = new System.Drawing.Point(138, 574);
+			this.btnAddNote.Location = new System.Drawing.Point(102, 549);
 			this.btnAddNote.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.btnAddNote.MouseState = MaterialSkin.MouseState.HOVER;
 			this.btnAddNote.Name = "btnAddNote";
 			this.btnAddNote.NoAccentTextColor = System.Drawing.Color.Empty;
 			this.btnAddNote.Size = new System.Drawing.Size(92, 36);
-			this.btnAddNote.TabIndex = 2;
+			this.btnAddNote.TabIndex = 10;
 			this.btnAddNote.Text = "Add Note";
 			this.btnAddNote.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
 			this.btnAddNote.UseAccentColor = false;
 			this.btnAddNote.UseVisualStyleBackColor = true;
+			// 
+			// richTextBox1
+			// 
+			this.richTextBox1.Location = new System.Drawing.Point(6, 6);
+			this.richTextBox1.Name = "richTextBox1";
+			this.richTextBox1.Size = new System.Drawing.Size(331, 527);
+			this.richTextBox1.TabIndex = 0;
+			this.richTextBox1.Text = "";
 			// 
 			// label2
 			// 
@@ -275,38 +267,59 @@ namespace LakeridgeCommunityHospital
 			this.btnAddTreatment.UseAccentColor = false;
 			this.btnAddTreatment.UseVisualStyleBackColor = true;
 			// 
-			// lstBoxPatientDetailsView
+			// lblStripStatus
 			// 
-			lstBoxPatientDetailsView.BackColor = System.Drawing.Color.LightSteelBlue;
-			lstBoxPatientDetailsView.FormattingEnabled = true;
-			lstBoxPatientDetailsView.ItemHeight = 25;
-			lstBoxPatientDetailsView.Location = new System.Drawing.Point(18, 31);
-			lstBoxPatientDetailsView.Name = "lstBoxPatientDetailsView";
-			lstBoxPatientDetailsView.Size = new System.Drawing.Size(729, 304);
-			lstBoxPatientDetailsView.TabIndex = 9;
+			this.lblStripStatus.AutoSize = true;
+			this.lblStripStatus.BackColor = System.Drawing.Color.Transparent;
+			this.lblStripStatus.Location = new System.Drawing.Point(411, 775);
+			this.lblStripStatus.Name = "lblStripStatus";
+			this.lblStripStatus.Size = new System.Drawing.Size(0, 18);
+			this.lblStripStatus.TabIndex = 8;
+			// 
+			// slbStatusConfirmation
+			// 
+			this.slbStatusConfirmation.BackColor = System.Drawing.Color.Transparent;
+			this.slbStatusConfirmation.Name = "slbStatusConfirmation";
+			this.slbStatusConfirmation.Size = new System.Drawing.Size(103, 17);
+			this.slbStatusConfirmation.Text = "Dashboard loaded";
+			// 
+			// sStrpStatusBar
+			// 
+			this.sStrpStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.slbStatusConfirmation});
+			this.sStrpStatusBar.Location = new System.Drawing.Point(3, 775);
+			this.sStrpStatusBar.Name = "sStrpStatusBar";
+			this.sStrpStatusBar.Size = new System.Drawing.Size(1490, 22);
+			this.sStrpStatusBar.TabIndex = 3;
+			this.sStrpStatusBar.Text = "statusStrip1";
 			// 
 			// dvgColAdmittion
 			// 
+			this.dvgColAdmittion.DataPropertyName = "ADMISSION_NUMBER";
 			this.dvgColAdmittion.HeaderText = "Admittion Number";
 			this.dvgColAdmittion.Name = "dvgColAdmittion";
 			// 
 			// dvgColAdmitted
 			// 
+			this.dvgColAdmitted.DataPropertyName = "DATE_ADDMITTED";
 			this.dvgColAdmitted.HeaderText = "Admitted ";
 			this.dvgColAdmitted.Name = "dvgColAdmitted";
 			// 
-			// dvgColDischarged
+			// Date_Discharged
 			// 
-			this.dvgColDischarged.HeaderText = "Discharged";
-			this.dvgColDischarged.Name = "dvgColDischarged";
+			this.Date_Discharged.DataPropertyName = "DATE_DISCHARGED";
+			this.Date_Discharged.HeaderText = "Discharged";
+			this.Date_Discharged.Name = "Date_Discharged";
 			// 
 			// dvgColAppointment
 			// 
+			this.dvgColAppointment.DataPropertyName = "TIME";
 			this.dvgColAppointment.HeaderText = "Appointment";
 			this.dvgColAppointment.Name = "dvgColAppointment";
 			// 
 			// dvgColPatient
 			// 
+			this.dvgColPatient.DataPropertyName = "PATIENT_NAME";
 			this.dvgColPatient.HeaderText = "Patient Name";
 			this.dvgColPatient.Name = "dvgColPatient";
 			// 
@@ -316,10 +329,11 @@ namespace LakeridgeCommunityHospital
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.LightSteelBlue;
 			this.ClientSize = new System.Drawing.Size(1496, 800);
+			this.Controls.Add(this.lblStripStatus);
 			this.Controls.Add(this.lblPatientDetails);
 			this.Controls.Add(this.dvgPatientListTable);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.statusStrip1);
+			this.Controls.Add(this.sStrpStatusBar);
 			this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
@@ -327,42 +341,46 @@ namespace LakeridgeCommunityHospital
 			this.Sizable = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Lakeridge Community Hospital";
-			this.Load += new System.EventHandler(this.Form1_Load);
+			this.Load += new System.EventHandler(this.PatientListGenerate);
 			((System.ComponentModel.ISupportInitialize)(this.dvgPatientListTable)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.tbAddNewNote.ResumeLayout(false);
-			this.tabPage1.ResumeLayout(false);
-			this.tabPage2.ResumeLayout(false);
-			this.tabPage2.PerformLayout();
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage4.ResumeLayout(false);
+			this.tabPage4.PerformLayout();
 			this.lblPatientDetails.ResumeLayout(false);
 			this.lblPatientDetails.PerformLayout();
+			this.sStrpStatusBar.ResumeLayout(false);
+			this.sStrpStatusBar.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-		private System.Windows.Forms.NotifyIcon notifyIcon1;
-		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.DataGridView dvgPatientListTable;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label1;
 		private MaterialListView lstViewPatientNoteLog;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TabPage tabPage1;
 		private MaterialMultiLineTextBox mtlTextBoxNoteSelect;
-		private MaterialButton btnAddNote;
 		private System.Windows.Forms.ColumnHeader lstBoxColDate;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.GroupBox lblPatientDetails;
         private MaterialButton btnAddTreatment;
-        private System.Windows.Forms.RichTextBox tbxNewNote;
-        public MaterialTabControl tbAddNewNote;
-        public System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.Label lblStripStatus;
+		private System.Windows.Forms.ToolStripStatusLabel slbStatusConfirmation;
+		private System.Windows.Forms.StatusStrip sStrpStatusBar;
+		
+		private System.Windows.Forms.TabControl tbAddNewNote;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.TabPage tabPage4;
+		private MaterialButton btnAddNote;
+		private System.Windows.Forms.RichTextBox richTextBox1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dvgColAdmittion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dvgColAdmitted;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dvgColDischarged;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Date_Discharged;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dvgColAppointment;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dvgColPatient;
 	}
