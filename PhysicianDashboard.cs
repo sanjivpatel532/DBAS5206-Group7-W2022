@@ -13,6 +13,7 @@ using MaterialSkin.Controls;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Protocols;
 using System.Data.Sql;
+using System.Web.UI.Design.WebControls;
 
 
 namespace LakeridgeCommunityHospital
@@ -36,13 +37,21 @@ namespace LakeridgeCommunityHospital
 
 		private void LoadNoteSelected()
 		{
-			string connection = @"Data Source=KUROMATSU-MSI\\SQLEXPRESS;Initial Catalog=LakeRidgeHospital;Integrated Security=True;Context Connection=False";
-			String sqlStatement = "";
-			SqlConnection cn = new SqlConnection(connection);
-			cn.Open();
-			SqlCommand command = new SqlCommand(sqlStatement, cn);
-			SqlDataAdapter thisAdapter = new SqlDataAdapter(command);
-			cn.Close();
+			//string connection = @"Data Source=KUROMATSU-MSI\\SQLEXPRESS;Initial Catalog=LakeRidgeHospital;Integrated Security=True;Context Connection=False";
+			//String sqlStatement = "Select Entry FROM NOTE Where ADMISSION_NUMBER = '1000000'";
+			//SqlConnection cn = new SqlConnection(connection);
+			//cn.Open();
+			//SqlCommand command = new SqlCommand(sqlStatement, cn);
+			//SqlDataAdapter thisAdapter = new SqlDataAdapter(command);
+			//DataTable data = new DataTable("one note");
+			//thisAdapter.Fill(data);
+			//mtlTextBoxNoteSelect.Text = data.DefaultView.ToString();
+
+
+			//cn.Close();
+			richTextBox1.Text = @"This note is to confirm that Baker, Mary A, she is suffering from allergies and I recommend you to allow her to discontinue classes for two months.";
+
+			//richTextBox1.Text;
 		}
 
 		private void GenerateNoteView(object sender, EventArgs e)
@@ -93,5 +102,31 @@ namespace LakeridgeCommunityHospital
 		
 
 		}
+		#region Singleton Pattern
+		// Singleton Pattern
+		/// <summary>
+		/// variable for form instance
+		/// </summary>
+		private static Form1 paientInstance;
+		/// <summary>
+		/// Method for form to get current instance of form (aka null or new)
+		/// </summary>
+		public static Form1 Instance
+		{
+			get
+			{
+				if (paientInstance == null)
+				{
+					paientInstance = new Form1();
+				}
+				else
+				{
+					//nothing
+				}
+				return paientInstance;
+			}
+		}
+		#endregion
+
 	}
 }

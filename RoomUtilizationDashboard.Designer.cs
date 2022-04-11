@@ -39,6 +39,8 @@ namespace LakeridgeCommunityHospital
 			this.RoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.IsOccupied = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.DateFree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.gbxRoomStats.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -52,6 +54,7 @@ namespace LakeridgeCommunityHospital
 			// 
 			// gbxRoomStats
 			// 
+			this.gbxRoomStats.Controls.Add(this.richTextBox1);
 			this.gbxRoomStats.Location = new System.Drawing.Point(684, 89);
 			this.gbxRoomStats.Name = "gbxRoomStats";
 			this.gbxRoomStats.Size = new System.Drawing.Size(405, 475);
@@ -144,6 +147,16 @@ namespace LakeridgeCommunityHospital
 			this.DateFree.ReadOnly = true;
 			this.DateFree.Width = 150;
 			// 
+			// richTextBox1
+			// 
+			this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.richTextBox1.Location = new System.Drawing.Point(6, 19);
+			this.richTextBox1.Name = "richTextBox1";
+			this.richTextBox1.Size = new System.Drawing.Size(393, 450);
+			this.richTextBox1.TabIndex = 0;
+			this.richTextBox1.Text = "Total Number of Bed per Room type \nSP -  5\nIC - 1\nW3 - 6\nW4- 4\nPR-1\n\n\nRoom with O" +
+    "pen bed\n328 -W3\n330-W4\n102 - SP";
+			// 
 			// RoomUtilizationDashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +169,8 @@ namespace LakeridgeCommunityHospital
 			this.Controls.Add(this.statusStrip1);
 			this.Name = "RoomUtilizationDashboard";
 			this.Text = "Room Utilization Dashboard";
+			this.Load += new System.EventHandler(this.RoomUtilizationDashboard_Load);
+			this.gbxRoomStats.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -173,5 +188,6 @@ namespace LakeridgeCommunityHospital
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomType;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsOccupied;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateFree;
-    }
+		private System.Windows.Forms.RichTextBox richTextBox1;
+	}
 }

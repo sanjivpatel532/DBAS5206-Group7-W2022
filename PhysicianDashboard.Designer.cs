@@ -35,8 +35,17 @@ namespace LakeridgeCommunityHospital
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.ListBox lstBoxPatientDetailsView;
+			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("2022-03-01 6:00AM , Confirmation diagnosis");
+			System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("2022-02-25 7:00AM        Culture Results");
+			System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("2022-01-05                         new investigation");
+			System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("2021-12-20 2:00PM     Follow up set");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.dvgPatientListTable = new System.Windows.Forms.DataGridView();
+			this.dvgColAdmittion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dvgColAdmitted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Date_Discharged = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dvgColAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dvgColPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tbAddNewNote = new System.Windows.Forms.TabControl();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -54,11 +63,6 @@ namespace LakeridgeCommunityHospital
 			this.lblStripStatus = new System.Windows.Forms.Label();
 			this.slbStatusConfirmation = new System.Windows.Forms.ToolStripStatusLabel();
 			this.sStrpStatusBar = new System.Windows.Forms.StatusStrip();
-			this.dvgColAdmittion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dvgColAdmitted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Date_Discharged = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dvgColAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dvgColPatient = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			lstBoxPatientDetailsView = new System.Windows.Forms.ListBox();
 			((System.ComponentModel.ISupportInitialize)(this.dvgPatientListTable)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -74,8 +78,17 @@ namespace LakeridgeCommunityHospital
 			lstBoxPatientDetailsView.BackColor = System.Drawing.Color.LightSteelBlue;
 			lstBoxPatientDetailsView.FormattingEnabled = true;
 			lstBoxPatientDetailsView.ItemHeight = 25;
+			lstBoxPatientDetailsView.Items.AddRange(new object[] {
+            "\'Baker, Mary A\',",
+            "\t\'300 Oak St.\',",
+            "\t\'Oshawa\',",
+            "\t\'ON\',",
+            "\t\'L1Y-1V1\',",
+            "\t\'905-555-5555\',",
+            "\t\'Female\'"});
 			lstBoxPatientDetailsView.Location = new System.Drawing.Point(18, 31);
 			lstBoxPatientDetailsView.Name = "lstBoxPatientDetailsView";
+			lstBoxPatientDetailsView.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			lstBoxPatientDetailsView.Size = new System.Drawing.Size(729, 304);
 			lstBoxPatientDetailsView.TabIndex = 9;
 			// 
@@ -95,6 +108,36 @@ namespace LakeridgeCommunityHospital
 			this.dvgPatientListTable.Name = "dvgPatientListTable";
 			this.dvgPatientListTable.Size = new System.Drawing.Size(769, 303);
 			this.dvgPatientListTable.TabIndex = 4;
+			// 
+			// dvgColAdmittion
+			// 
+			this.dvgColAdmittion.DataPropertyName = "ADMISSION_NUMBER";
+			this.dvgColAdmittion.HeaderText = "Admittion Number";
+			this.dvgColAdmittion.Name = "dvgColAdmittion";
+			// 
+			// dvgColAdmitted
+			// 
+			this.dvgColAdmitted.DataPropertyName = "DATE_ADDMITTED";
+			this.dvgColAdmitted.HeaderText = "Admitted ";
+			this.dvgColAdmitted.Name = "dvgColAdmitted";
+			// 
+			// Date_Discharged
+			// 
+			this.Date_Discharged.DataPropertyName = "DATE_DISCHARGED";
+			this.Date_Discharged.HeaderText = "Discharged";
+			this.Date_Discharged.Name = "Date_Discharged";
+			// 
+			// dvgColAppointment
+			// 
+			this.dvgColAppointment.DataPropertyName = "TIME";
+			this.dvgColAppointment.HeaderText = "Appointment";
+			this.dvgColAppointment.Name = "dvgColAppointment";
+			// 
+			// dvgColPatient
+			// 
+			this.dvgColPatient.DataPropertyName = "PATIENT_NAME";
+			this.dvgColPatient.HeaderText = "Patient Name";
+			this.dvgColPatient.Name = "dvgColPatient";
 			// 
 			// panel1
 			// 
@@ -138,9 +181,11 @@ namespace LakeridgeCommunityHospital
 			this.mtlTextBoxNoteSelect.Location = new System.Drawing.Point(3, 3);
 			this.mtlTextBoxNoteSelect.MouseState = MaterialSkin.MouseState.HOVER;
 			this.mtlTextBoxNoteSelect.Name = "mtlTextBoxNoteSelect";
+			this.mtlTextBoxNoteSelect.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.mtlTextBoxNoteSelect.Size = new System.Drawing.Size(334, 601);
 			this.mtlTextBoxNoteSelect.TabIndex = 0;
-			this.mtlTextBoxNoteSelect.Text = "";
+			this.mtlTextBoxNoteSelect.Text = "This note is to confirm that Baker, Mary A, she is suffering from allergies and I" +
+    " recommend you to allow her to discontinue classes for two months.";
 			// 
 			// tabPage4
 			// 
@@ -177,9 +222,11 @@ namespace LakeridgeCommunityHospital
 			// 
 			this.richTextBox1.Location = new System.Drawing.Point(6, 6);
 			this.richTextBox1.Name = "richTextBox1";
+			this.richTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.richTextBox1.Size = new System.Drawing.Size(331, 527);
 			this.richTextBox1.TabIndex = 0;
-			this.richTextBox1.Text = "";
+			this.richTextBox1.Text = "2022-04-11 11:00AM     New Diagnosis\n\nResults of culture and imaging revelaed fib" +
+    "roids";
 			// 
 			// label2
 			// 
@@ -202,6 +249,11 @@ namespace LakeridgeCommunityHospital
 			this.lstViewPatientNoteLog.Depth = 0;
 			this.lstViewPatientNoteLog.FullRowSelect = true;
 			this.lstViewPatientNoteLog.HideSelection = false;
+			this.lstViewPatientNoteLog.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
 			this.lstViewPatientNoteLog.Location = new System.Drawing.Point(13, 50);
 			this.lstViewPatientNoteLog.MinimumSize = new System.Drawing.Size(200, 100);
 			this.lstViewPatientNoteLog.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -217,7 +269,7 @@ namespace LakeridgeCommunityHospital
 			// lstBoxColDate
 			// 
 			this.lstBoxColDate.Text = "Date Recorded";
-			this.lstBoxColDate.Width = 200;
+			this.lstBoxColDate.Width = 165;
 			// 
 			// columnHeader1
 			// 
@@ -266,6 +318,7 @@ namespace LakeridgeCommunityHospital
 			this.btnAddTreatment.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
 			this.btnAddTreatment.UseAccentColor = false;
 			this.btnAddTreatment.UseVisualStyleBackColor = true;
+
 			// 
 			// lblStripStatus
 			// 
@@ -292,36 +345,6 @@ namespace LakeridgeCommunityHospital
 			this.sStrpStatusBar.Size = new System.Drawing.Size(1490, 22);
 			this.sStrpStatusBar.TabIndex = 3;
 			this.sStrpStatusBar.Text = "statusStrip1";
-			// 
-			// dvgColAdmittion
-			// 
-			this.dvgColAdmittion.DataPropertyName = "ADMISSION_NUMBER";
-			this.dvgColAdmittion.HeaderText = "Admittion Number";
-			this.dvgColAdmittion.Name = "dvgColAdmittion";
-			// 
-			// dvgColAdmitted
-			// 
-			this.dvgColAdmitted.DataPropertyName = "DATE_ADDMITTED";
-			this.dvgColAdmitted.HeaderText = "Admitted ";
-			this.dvgColAdmitted.Name = "dvgColAdmitted";
-			// 
-			// Date_Discharged
-			// 
-			this.Date_Discharged.DataPropertyName = "DATE_DISCHARGED";
-			this.Date_Discharged.HeaderText = "Discharged";
-			this.Date_Discharged.Name = "Date_Discharged";
-			// 
-			// dvgColAppointment
-			// 
-			this.dvgColAppointment.DataPropertyName = "TIME";
-			this.dvgColAppointment.HeaderText = "Appointment";
-			this.dvgColAppointment.Name = "dvgColAppointment";
-			// 
-			// dvgColPatient
-			// 
-			this.dvgColPatient.DataPropertyName = "PATIENT_NAME";
-			this.dvgColPatient.HeaderText = "Patient Name";
-			this.dvgColPatient.Name = "dvgColPatient";
 			// 
 			// Form1
 			// 
