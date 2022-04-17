@@ -1,35 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
+using MaterialSkin.Controls;
+using System.IO;
 
 namespace LakeridgeCommunityHospital
 {
-	public partial class btnRoom : Form
+	public partial class mdiParentMain : MaterialForm
 	{
-		private int childFormNumber = 0;
+		//private int childFormNumber = 0;
 
-		public btnRoom()
+		public mdiParentMain()
 		{
 			InitializeComponent();
 			var materialSkinManager = MaterialSkinManager.Instance;
 			materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 			materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo400, Primary.Indigo700, Primary.Indigo200, Accent.LightBlue200, TextShade.WHITE);
+
+			statusChange.Text = @"Application Started";
 		}
 
-		private void ShowNewForm(object sender, EventArgs e)
-		{
-			Form childForm = new Form();
-			childForm.MdiParent = this;
-			childForm.Text = "Window " + childFormNumber++;
-			childForm.Show();
-		}
 
 		private void OpenFile(object sender, EventArgs e)
 		{
@@ -58,16 +48,26 @@ namespace LakeridgeCommunityHospital
 			this.Close();
 		}
 
-		private void CutToolStripMenuItem_Click(object sender, EventArgs e)
+
+	
+		private void menuEditCut_Click(object sender, EventArgs e)
 		{
+			Form1.Instance.CutText();
 		}
 
-		private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
+		private void menuEditCopy_Click(object sender, EventArgs e)
 		{
+			Form1.Instance.CopyText();
 		}
 
-		private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
+		private void menuEditPaste_Click(object sender, EventArgs e)
 		{
+			Form1.Instance.PasteText();
+		}
+
+		private void menuEditSelectAll_Click(object sender, EventArgs e)
+		{
+			Form1.Instance.SelectAllText();
 		}
 
 		//private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace LakeridgeCommunityHospital
 			frm.MdiParent = this;
 			frm.Show();
 			frm.Focus();
-
+			statusChange.Text = "Physician-Patient Dashboard loaded";
 		}
 
 		private void btnRoomClick(object sender, EventArgs e)
@@ -123,6 +123,8 @@ namespace LakeridgeCommunityHospital
 			frm.MdiParent = this;
 			frm.Show();
 			frm.Focus();
+
+			statusChange.Text = "Room Utilization Dashboard loaded";
 		}
 
 
@@ -153,6 +155,76 @@ namespace LakeridgeCommunityHospital
 		private void menuWindowTileVertical_Click(object sender, EventArgs e)
 		{
 			this.LayoutMdi(System.Windows.Forms.MdiLayout.TileVertical);
+		}
+
+
+		/// <summary>
+		/// Prompts for SaveAsFile if there is no FileName.
+		/// </summary>
+		private void SaveFile()
+		{
+			if (Form1.Instance.FileNameCurrent == string.Empty || Form1.Instance.FileNameCurrent == "Untitled")
+			{
+				SaveAsFile();
+			}
+			else // if the current file is not empty use the current filename in memory / global variable
+			{
+				string fileName = Form1.Instance.FileNameCurrent;
+				Document.FileWrite(Document.TextFile, fileName);
+				MessageBox.Show("Save was Complete", "Save Confirmation", MessageBoxButtons.OK);
+			
+			}
+		}
+
+		/// <summary>
+		/// Opens save file dialog, writes it to file for current instance of Text Editor
+		/// </summary>
+		private void SaveAsFile()
+		{
+			String fileName = string.Empty;
+			SaveFileDialog saveAs = new SaveFileDialog();
+			if (saveAs.ShowDialog() == DialogResult.OK)
+			{
+				fileName = saveAs.FileName;
+				Document.TextFile.FileName = fileName;
+				// save the information
+				Document.FileWrite(Document.TextFile, Document.TextFile.FileName);
+				MessageBox.Show("Save was Complete", "Save Confirmation", MessageBoxButtons.OK);
+				Form1.Instance.Update();
+				//filename = Path.GetFileName(filename);
+			};
+		}
+
+
+		#region Menu Options
+		/// <summary>
+		/// Calls for the LoadFile method from the document class.
+		/// </summary>
+		private void OpenFile()
+		{
+			OpenFileDialog openDialog = new OpenFileDialog();
+			if (openDialog.ShowDialog() == DialogResult.OK)
+			{
+				// Load from a file, have to show dialog first
+				Document.LoadFile(openDialog.FileName);
+				Form1 frm = Form1.Instance;
+				frm.MdiParent = this;
+				// when loading the list of troops, force the update form (it is a public method) before show/focus
+				frm.Update();
+				frm.Show();
+				frm.Focus();
+				//Instance.FileNameCurrent.Text = Path.GetFileName(openFileDialog1.FileName);
+			}
+		}
+
+		#endregion
+
+		private void frmParentLoad(object sender, EventArgs e)
+		{
+			SaveFileDialog saveAs = new SaveFileDialog();
+			OpenFileDialog openDialog = new OpenFileDialog();
+			saveAs.Filter = "Text Documents (*.txt)|*.txt";
+			openDialog.Filter = "Text Documents (*.txt)|*.txt";
 		}
 	}
 }

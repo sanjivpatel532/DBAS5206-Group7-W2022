@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer;
+using System.Data.SqlClient;
 using System.ComponentModel.DataAnnotations;
 
 namespace LakeridgeCommunityHospital
@@ -19,7 +18,7 @@ namespace LakeridgeCommunityHospital
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new btnRoom());
+			Application.Run(new mdiParentMain());
 		}
 	}
 }

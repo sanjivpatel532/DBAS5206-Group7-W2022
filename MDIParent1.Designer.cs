@@ -1,7 +1,7 @@
 ﻿
 namespace LakeridgeCommunityHospital
 {
-	partial class btnRoom
+	partial class mdiParentMain
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -30,7 +30,7 @@ namespace LakeridgeCommunityHospital
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnRoom));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdiParentMain));
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,15 +38,9 @@ namespace LakeridgeCommunityHospital
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-			this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.printSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
-			this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
 			this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,12 +53,10 @@ namespace LakeridgeCommunityHospital
 			this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
-			this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
 			this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,12 +64,16 @@ namespace LakeridgeCommunityHospital
 			this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
-			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusChanged = new System.Windows.Forms.ToolStripStatusLabel();
+			this.SetChangeStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusChange = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.btnPatient = new MaterialSkin.Controls.MaterialButton();
 			this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -89,10 +85,10 @@ namespace LakeridgeCommunityHospital
             this.toolsMenu,
             this.windowsMenu,
             this.helpMenu});
-			this.menuStrip.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip.Location = new System.Drawing.Point(3, 64);
 			this.menuStrip.MdiWindowListItem = this.windowsMenu;
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(1582, 24);
+			this.menuStrip.Size = new System.Drawing.Size(1688, 24);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "MenuStrip";
 			// 
@@ -104,10 +100,6 @@ namespace LakeridgeCommunityHospital
             this.toolStripSeparator3,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem,
-            this.printSetupToolStripMenuItem,
             this.toolStripSeparator5,
             this.exitToolStripMenuItem});
 			this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
@@ -121,9 +113,8 @@ namespace LakeridgeCommunityHospital
 			this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
 			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
 			this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-			this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
 			this.newToolStripMenuItem.Text = "&New";
-			this.newToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
 			// 
 			// openToolStripMenuItem
 			// 
@@ -156,34 +147,6 @@ namespace LakeridgeCommunityHospital
 			this.saveAsToolStripMenuItem.Text = "Save &As";
 			this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
 			// 
-			// toolStripSeparator4
-			// 
-			this.toolStripSeparator4.Name = "toolStripSeparator4";
-			this.toolStripSeparator4.Size = new System.Drawing.Size(143, 6);
-			// 
-			// printToolStripMenuItem
-			// 
-			this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-			this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
-			this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-			this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-			this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-			this.printToolStripMenuItem.Text = "&Print";
-			// 
-			// printPreviewToolStripMenuItem
-			// 
-			this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-			this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
-			this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-			this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-			this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-			// 
-			// printSetupToolStripMenuItem
-			// 
-			this.printSetupToolStripMenuItem.Name = "printSetupToolStripMenuItem";
-			this.printSetupToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-			this.printSetupToolStripMenuItem.Text = "Print Setup";
-			// 
 			// toolStripSeparator5
 			// 
 			this.toolStripSeparator5.Name = "toolStripSeparator5";
@@ -199,8 +162,6 @@ namespace LakeridgeCommunityHospital
 			// editMenu
 			// 
 			this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
-            this.redoToolStripMenuItem,
             this.toolStripSeparator6,
             this.cutToolStripMenuItem,
             this.copyToolStripMenuItem,
@@ -210,24 +171,6 @@ namespace LakeridgeCommunityHospital
 			this.editMenu.Name = "editMenu";
 			this.editMenu.Size = new System.Drawing.Size(39, 20);
 			this.editMenu.Text = "&Edit";
-			// 
-			// undoToolStripMenuItem
-			// 
-			this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
-			this.undoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
-			this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-			this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-			this.undoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-			this.undoToolStripMenuItem.Text = "&Undo";
-			// 
-			// redoToolStripMenuItem
-			// 
-			this.redoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("redoToolStripMenuItem.Image")));
-			this.redoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
-			this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-			this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-			this.redoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-			this.redoToolStripMenuItem.Text = "&Redo";
 			// 
 			// toolStripSeparator6
 			// 
@@ -242,7 +185,7 @@ namespace LakeridgeCommunityHospital
 			this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
 			this.cutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
 			this.cutToolStripMenuItem.Text = "Cu&t";
-			this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
+			this.cutToolStripMenuItem.Click += new System.EventHandler(this.menuEditCut_Click);
 			// 
 			// copyToolStripMenuItem
 			// 
@@ -252,7 +195,7 @@ namespace LakeridgeCommunityHospital
 			this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
 			this.copyToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
 			this.copyToolStripMenuItem.Text = "&Copy";
-			this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
+			this.copyToolStripMenuItem.Click += new System.EventHandler(this.menuEditCopy_Click);
 			// 
 			// pasteToolStripMenuItem
 			// 
@@ -262,7 +205,7 @@ namespace LakeridgeCommunityHospital
 			this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
 			this.pasteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
 			this.pasteToolStripMenuItem.Text = "&Paste";
-			this.pasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
+			this.pasteToolStripMenuItem.Click += new System.EventHandler(this.menuEditPaste_Click);
 			// 
 			// toolStripSeparator7
 			// 
@@ -321,22 +264,13 @@ namespace LakeridgeCommunityHospital
 			// windowsMenu
 			// 
 			this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newWindowToolStripMenuItem,
             this.cascadeToolStripMenuItem,
             this.tileVerticalToolStripMenuItem,
             this.tileHorizontalToolStripMenuItem,
-            this.closeAllToolStripMenuItem,
-            this.arrangeIconsToolStripMenuItem});
+            this.closeAllToolStripMenuItem});
 			this.windowsMenu.Name = "windowsMenu";
 			this.windowsMenu.Size = new System.Drawing.Size(68, 20);
 			this.windowsMenu.Text = "&Windows";
-			// 
-			// newWindowToolStripMenuItem
-			// 
-			this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-			this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-			this.newWindowToolStripMenuItem.Text = "&New Window";
-			this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
 			// 
 			// cascadeToolStripMenuItem
 			// 
@@ -365,13 +299,6 @@ namespace LakeridgeCommunityHospital
 			this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.closeAllToolStripMenuItem.Text = "C&lose All";
 			this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
-			// 
-			// arrangeIconsToolStripMenuItem
-			// 
-			this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-			this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-			this.arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
-			this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
 			// 
 			// helpMenu
 			// 
@@ -422,33 +349,49 @@ namespace LakeridgeCommunityHospital
 			// statusStrip
 			// 
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-			this.statusStrip.Location = new System.Drawing.Point(0, 939);
+            this.statusChanged,
+            this.SetChangeStatus,
+            this.statusChange});
+			this.statusStrip.Location = new System.Drawing.Point(3, 1131);
 			this.statusStrip.Name = "statusStrip";
-			this.statusStrip.Size = new System.Drawing.Size(1582, 22);
+			this.statusStrip.Size = new System.Drawing.Size(1688, 22);
 			this.statusStrip.TabIndex = 2;
 			this.statusStrip.Text = "StatusStrip";
 			// 
-			// toolStripStatusLabel
+			// statusChanged
 			// 
-			this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-			this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-			this.toolStripStatusLabel.Text = "Status";
+			this.statusChanged.Name = "statusChanged";
+			this.statusChanged.Size = new System.Drawing.Size(39, 17);
+			this.statusChanged.Text = "Status";
+			// 
+			// SetChangeStatus
+			// 
+			this.SetChangeStatus.Name = "SetChangeStatus";
+			this.SetChangeStatus.Size = new System.Drawing.Size(0, 17);
+			// 
+			// statusChange
+			// 
+			this.statusChange.Enabled = false;
+			this.statusChange.Name = "statusChange";
+			this.statusChange.Size = new System.Drawing.Size(0, 17);
 			// 
 			// btnPatient
 			// 
+			this.btnPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnPatient.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
 			this.btnPatient.Depth = 0;
 			this.btnPatient.HighEmphasis = true;
 			this.btnPatient.Icon = null;
-			this.btnPatient.Location = new System.Drawing.Point(13, 897);
+			this.btnPatient.Location = new System.Drawing.Point(29, 1076);
 			this.btnPatient.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.btnPatient.MouseState = MaterialSkin.MouseState.HOVER;
 			this.btnPatient.Name = "btnPatient";
 			this.btnPatient.NoAccentTextColor = System.Drawing.Color.Empty;
-			this.btnPatient.Size = new System.Drawing.Size(252, 36);
+			this.btnPatient.Size = new System.Drawing.Size(271, 36);
 			this.btnPatient.TabIndex = 4;
-			this.btnPatient.Text = "Physician-Patient Dashboard";
+			this.btnPatient.Text = "Physician-PatientDB Dashboard";
 			this.btnPatient.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
 			this.btnPatient.UseAccentColor = false;
 			this.btnPatient.UseVisualStyleBackColor = true;
@@ -456,11 +399,14 @@ namespace LakeridgeCommunityHospital
 			// 
 			// materialButton2
 			// 
+			this.materialButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
 			this.materialButton2.Depth = 0;
 			this.materialButton2.HighEmphasis = true;
 			this.materialButton2.Icon = null;
-			this.materialButton2.Location = new System.Drawing.Point(284, 897);
+			this.materialButton2.Location = new System.Drawing.Point(357, 1076);
 			this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialButton2.Name = "materialButton2";
@@ -473,11 +419,23 @@ namespace LakeridgeCommunityHospital
 			this.materialButton2.UseVisualStyleBackColor = true;
 			this.materialButton2.Click += new System.EventHandler(this.btnRoomClick);
 			// 
-			// btnRoom
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.Image = global::LakeridgeCommunityHospital.Properties.Resources.Medicalwp_Medical_Hospital_blue;
+			this.pictureBox1.Location = new System.Drawing.Point(14, 27);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.pictureBox1.TabIndex = 7;
+			this.pictureBox1.TabStop = false;
+			// 
+			// mdiParentMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1582, 961);
+			this.ClientSize = new System.Drawing.Size(1694, 1156);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.statusStrip);
 			this.Controls.Add(this.menuStrip);
 			this.Controls.Add(this.materialButton2);
@@ -486,14 +444,15 @@ namespace LakeridgeCommunityHospital
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip;
-			this.Name = "btnRoom";
+			this.Name = "mdiParentMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "LAKERIDGE COMMUNITY HOSPITAL";
-			this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+			this.Text = "        LAKERIDGE COMMUNITY HOSPITAL";
+			this.Load += new System.EventHandler(this.frmParentLoad);
 			this.menuStrip.ResumeLayout(false);
 			this.menuStrip.PerformLayout();
 			this.statusStrip.ResumeLayout(false);
 			this.statusStrip.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -504,13 +463,11 @@ namespace LakeridgeCommunityHospital
 		private System.Windows.Forms.MenuStrip menuStrip;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-		private System.Windows.Forms.ToolStripMenuItem printSetupToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+		private System.Windows.Forms.ToolStripStatusLabel statusChanged;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fileMenu;
@@ -518,12 +475,8 @@ namespace LakeridgeCommunityHospital
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem editMenu;
-		private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
@@ -534,11 +487,9 @@ namespace LakeridgeCommunityHospital
 		private System.Windows.Forms.ToolStripMenuItem toolsMenu;
 		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem windowsMenu;
-		private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem helpMenu;
 		private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
@@ -546,6 +497,9 @@ namespace LakeridgeCommunityHospital
 		private System.Windows.Forms.ToolTip toolTip;
 		private MaterialSkin.Controls.MaterialButton btnPatient;
 		private MaterialSkin.Controls.MaterialButton materialButton2;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.ToolStripStatusLabel SetChangeStatus;
+		private System.Windows.Forms.ToolStripStatusLabel statusChange;
 	}
 }
 

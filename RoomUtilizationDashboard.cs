@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
-using System.Data.Entity.Core.Objects.DataClasses;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -67,19 +61,19 @@ namespace LakeridgeCommunityHospital
 		{
 			try
 			{
-				//string connection = "Data Source=KUROMATSU-MSI\\SQLEXPRESS;Initial Catalog=LakeRidgeHospital;Integrated Security=True;Context Connection=False";
+				string connection = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
 
-				//String sqlStatement = "SELECT r.ROOM_NUMBER , r.ROOM_TYPE, b.BED_CHAR FROM ROOM r , BED b ";
-				//SqlConnection cn = new SqlConnection(connection);
-				////cn.Open();
-				//SqlCommand command = new SqlCommand(sqlStatement, cn);
-				//SqlDataAdapter thisAdapter = new SqlDataAdapter(command);
+				string sqlStatement = "SELECT r.ROOM_NUMBER , r.ROOM_TYPE, b.BED_CHAR FROM ROOM r , BED b  WHERE r.ROOM_NUMBER = b.ROOM_NUMBER";
+				SqlConnection cn = new SqlConnection(connection);
+				cn.Open();
+				SqlCommand command = new SqlCommand(sqlStatement, cn);
+				SqlDataAdapter thisAdapter = new SqlDataAdapter(command);
 
-				//DataTable data = new DataTable("Temp Data Query");
-				//thisAdapter.Fill(data);
-				//dataGridView1.DataSource = data.DefaultView;
+				DataTable data = new DataTable("Temp Data Query");
+				thisAdapter.Fill(data);
+				dataGridView1.DataSource = data.DefaultView;
 
-				////cn.Close();
+				cn.Close();
 			}
 			catch (Exception ex)
 			{

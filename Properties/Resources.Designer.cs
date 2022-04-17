@@ -59,5 +59,15 @@ namespace LakeridgeCommunityHospital.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Medicalwp_Medical_Hospital_blue {
+            get {
+                object obj = ResourceManager.GetObject("Medicalwp-Medical-Hospital-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
