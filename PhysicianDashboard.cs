@@ -9,12 +9,14 @@ using System.IO;
 using Microsoft.IdentityModel.Protocols;
 using System.Configuration;
 using System.Runtime.CompilerServices;
+using static LakeridgeCommunityHospital.PatientDB;
 
 namespace LakeridgeCommunityHospital
 {
+	
 	public partial class Form1 : MaterialForm
 	{
-		private PatientDB _frmPatient = new();
+		private PatientDB thisPatientDb = new PatientDB();
 		public Form1()
 		{
 			InitializeComponent();
@@ -28,46 +30,11 @@ namespace LakeridgeCommunityHospital
 		}
 
 
-		private void LoadNoteSelected()
-		{
-			string connection = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-			//String sqlStatement = "Select Entry FROM NOTE Where ADMISSION_NUMBER = '1000000'";
-			//SqlConnection cn = new SqlConnection(connection);
-			//cn.Open();
-			//SqlCommand command = new SqlCommand(sqlStatement, cn);
-			//SqlDataAdapter thisAdapter = new SqlDataAdapter(command);
-			//DataTable data = new DataTable("one note");
-			//thisAdapter.Fill(data);
-			//mtlTextBoxNoteSelect.Text = data.DefaultView.ToString();
-
-
-			//cn.Close();
-			rtboxNewNote.Text = @"This note is to confirm that Baker, Mary A, she is suffering from allergies and I recommend you to allow her to discontinue classes for two months.";
-
-			
-		}
 
 		private void GenerateNoteView(object sender, EventArgs e)
 		{
-
-			string connection = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-			String sqlStatement = "Select  a.DATE_ADMITTED,n.Entry  FROM NOTE n , ADMISSION a WHERE n.ADMISSION_Number = a.ADMISSION_NUMBER";
-			SqlConnection cn = new SqlConnection(connection);
-			cn.Open();
-			SqlCommand command = new SqlCommand(sqlStatement, cn);
-			SqlDataAdapter thisAdapter = new SqlDataAdapter(command);
-			DataTable data = new DataTable("fill ME");
-			thisAdapter.Fill(data);
-
-			for (int i = 0; i < data.Rows.Count; i++)
-			{
-				DataRow datRow = data.Rows[i];
-				ListViewItem datItem = new ListViewItem(datRow["ADMISSION_NUMBER"].ToString());
-				datItem.SubItems.Add(datRow["DATE_ADMITTED"].ToString());
-				datItem.SubItems.Add(datRow["ENTRY"].ToString());
-			}
-
-			cn.Close();
+			// Use class method to populate currently selected patient's list of notes
+			GetPatientNote(thisPatientDb.AdmiNum);
 		}
 
 		private void PatientListGenerate(object sender, EventArgs e)
@@ -76,10 +43,10 @@ namespace LakeridgeCommunityHospital
 			{
 				
 				//Use method for calling data from database as a list
-				PatientDB.GetPatientListData();
+				 patientsList = GetPatientListData();
 
 				//Add data to DVG table
-				dvgPatientListTable.DataSource	 =  PatientDB.patientsList;
+				dvgPatientListTable.DataSource =  patientsList;
 			}
 			catch (Exception ex)
 			{
@@ -208,8 +175,8 @@ namespace LakeridgeCommunityHospital
 
 		private void AddNoteClick(object sender, EventArgs e)
 		{
-			PatientDB.GetPatientNumber(_frmPatient);
-			PatientDB.SetPatientNote(int.Parse(_frmPatient.AdmiNum), rtboxNewNote );
+			//PatientDB.GetPatientNumber(_toPatient);
+			PatientDB.SetPatientNote(int.Parse(thisPatientDb.AdmiNum), rtboxNewNote );
 		}
 
 		private void GetCurrentPatientSelection(object sender, EventArgs e)
@@ -217,7 +184,7 @@ namespace LakeridgeCommunityHospital
 			try
 			{
 				if (dvgPatientListTable.CurrentRow != null)
-					_frmPatient = (PatientDB)dvgPatientListTable.CurrentRow.Cells.GetEnumerator();
+					thisPatientDb = (PatientDB)dvgPatientListTable.CurrentRow.Cells.GetEnumerator();
 
 			}
 			catch (NullReferenceException)

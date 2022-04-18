@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace LakeridgeCommunityHospital
 {
-	public class PatientDB
+	internal class PatientDB
 	{
 		#region DVG DATA
 
@@ -61,7 +61,7 @@ namespace LakeridgeCommunityHospital
 			ConnectionStringSettings myConnectionString = ConfigurationManager.ConnectionStrings[1];
 
 			//// If found, return the connection string.
-			if (myConnectionString != null)
+			if (true)
 				returnValue = myConnectionString.ConnectionString;
 
 			//YEY CONNECTION!
@@ -84,20 +84,22 @@ namespace LakeridgeCommunityHospital
 			return number;
 		}
 
-
+		/// <summary>
+		/// Method for adding patients to a list object
+		/// </summary>
+		/// <returns></returns>
 		public static List<PatientDB> GetPatientListData()
 		{
 			List<PatientDB> patients = new List<PatientDB>();
 			string connectionStr = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
 			SqlConnection connection = new SqlConnection(connectionStr);
 			connection.Open();
-			string sqlStatement = "SELECT p.Patient_Name, ap.TIME, a.DATE_DISCHARGED, a.ADMISSION_NUMBER FROM ADMISSION a, PatientDB p, Appointment ap WHERE p.Patient_Number = a.Patient_Number ";
+			string sqlStatement = "SELECT p.Patient_Name, ap.TIME, a.DATE_DISCHARGED, a.ADMISSION_NUMBER FROM LakeRidgeHospital.dbo.ADMISSION a, LakeRidgeHospital.dbo.PatientDB p, LakeRidgeHospital.dbo.Appointment ap WHERE p.Patient_Number = a.Patient_Number ";
 			SqlCommand command = new SqlCommand(sqlStatement, connection);
-			SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-
+			SqlDataReader reader = command.ExecuteReader(CommandBehavior.SequentialAccess);
 			while (reader.Read())
 			{
-				PatientDB patient = new PatientDB();
+				PatientDB patient = new PatientDB();	
 				patient.PatientNumber = reader["Patient_Number"].ToString();
 				patient.PatientName = reader["Patient_Name"].ToString();
 				patient.AppTime = reader["TIME"].ToString();
@@ -119,8 +121,7 @@ namespace LakeridgeCommunityHospital
 		public static void SetPatientNote(int admissionNum, RichTextBox note)
 		{
 			string newNote = note.ToString();
-			string insertNote = @"INSERT INTO NOTE (ADMISSION_NUMBER, ENTRY) VALUES" + admissionNum + "," +
-			                    newNote + ")";
+			string insertNote = @"INSERT INTO LakeRidgeHospital.dbo.NOTE (ADMISSION_NUMBER, ENTRY) VALUES" + admissionNum + "," + newNote + ")";
 			string connection = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
 			// set a variable for current patient viewed & get  admission number
 			SqlConnection cn = new SqlConnection(connection);
@@ -134,16 +135,16 @@ namespace LakeridgeCommunityHospital
 
 		public static void GetPatientDetails(int patientNumber)
 		{
-			string sqlStatement = "Select p.* , f.Provider, a.Date_admitted, a.Date_Discharged, a.Room_Number, a.Bed_Char  " +
-			    "From  Patient p , Admission a ,Financial_Status f " +
-			    "Where "
+			//string sqlStatement = "Select p.* , f.Provider, a.Date_admitted, a.Date_Discharged, a.Room_Number, a.Bed_Char  " +
+			//    "From  Patient p , Admission a ,Financial_Status f " +
+			//    "Where "
 		}
 
 
 		public static void GetPatientNote(string admissionNumber)
 		{
 			string connection = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-			string sqlStatement = "Select  a.DATE_ADMITTED,n.Entry  FROM NOTE n , ADMISSION a WHERE n.ADMISSION_Number = a." + admissionNumber + ";";
+			string sqlStatement = "Select  a.DATE_ADMITTED,n.Entry  FROM LakeRidgeHospital.dbo.NOTE n , LakeRidgeHospital.dbo.ADMISSION a WHERE n.ADMISSION_Number = a." + admissionNumber + ";";
 			SqlConnection cn = new SqlConnection(connection);
 			cn.Open();
 			SqlCommand command = new SqlCommand(sqlStatement, cn);

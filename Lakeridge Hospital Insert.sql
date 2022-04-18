@@ -1048,7 +1048,7 @@ VALUES
 --	1000000 Baker, Mary A
 (	100000, 
 	GETDATE(),
-	DATEADD(day, 3, GETDATE()),  --Has not yet been discharged
+	NULL ,  --Has not yet been discharged
 	328,
 	'B'
 ),
@@ -1058,6 +1058,7 @@ VALUES
 	DATEADD(day, 3, GETDATE()),  --Has not yet been discharged
 	103,
 	'B'
+-- DATEADD(day, 3, GETDATE())  <- can be used to add a discharge date set to # of days after Date_Admitted
 )
 GO
 

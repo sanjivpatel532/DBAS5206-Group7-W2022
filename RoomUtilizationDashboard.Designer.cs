@@ -29,8 +29,10 @@ namespace LakeridgeCommunityHospital
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.gbxRoomStats = new System.Windows.Forms.GroupBox();
+			this.rtBoxStats = new MaterialSkin.Controls.MaterialMultiLineTextBox();
 			this.btnAssignRoom = new MaterialSkin.Controls.MaterialButton();
 			this.btnDischargeRoom = new MaterialSkin.Controls.MaterialButton();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,9 +41,25 @@ namespace LakeridgeCommunityHospital
 			this.RoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.IsOccupied = new System.Windows.Forms.DataGridViewCheckBoxColumn();
 			this.DateFree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.lakeRidgeHospitalDataSet = new LakeridgeCommunityHospital.LakeRidgeHospitalDataSet();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.rOOMTYPEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dESCRIPTIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.rOOMTYPEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.rOOM_TYPETableAdapter = new LakeridgeCommunityHospital.LakeRidgeHospitalDataSetTableAdapters.ROOM_TYPETableAdapter();
+			this.dataGridView3 = new System.Windows.Forms.DataGridView();
+			this.rOOMNUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bEDCHARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.eXTENSIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.bEDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bEDTableAdapter = new LakeridgeCommunityHospital.LakeRidgeHospitalDataSetTableAdapters.BEDTableAdapter();
 			this.gbxRoomStats.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.lakeRidgeHospitalDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.rOOMTYPEBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bEDBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// statusStrip1
@@ -54,13 +72,29 @@ namespace LakeridgeCommunityHospital
 			// 
 			// gbxRoomStats
 			// 
-			this.gbxRoomStats.Controls.Add(this.richTextBox1);
+			this.gbxRoomStats.Controls.Add(this.rtBoxStats);
+			this.gbxRoomStats.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.gbxRoomStats.Location = new System.Drawing.Point(684, 89);
 			this.gbxRoomStats.Name = "gbxRoomStats";
 			this.gbxRoomStats.Size = new System.Drawing.Size(405, 475);
 			this.gbxRoomStats.TabIndex = 2;
 			this.gbxRoomStats.TabStop = false;
 			this.gbxRoomStats.Text = "Room Statistics";
+			// 
+			// rtBoxStats
+			// 
+			this.rtBoxStats.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.rtBoxStats.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.rtBoxStats.Depth = 0;
+			this.rtBoxStats.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.rtBoxStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.rtBoxStats.Location = new System.Drawing.Point(6, 22);
+			this.rtBoxStats.MouseState = MaterialSkin.MouseState.HOVER;
+			this.rtBoxStats.Name = "rtBoxStats";
+			this.rtBoxStats.Size = new System.Drawing.Size(393, 447);
+			this.rtBoxStats.TabIndex = 5;
+			this.rtBoxStats.Text = "Total Number of Bed per Room type \nSP -  5\nIC - 1\nW3 - 6\nW4- 4\nPR-1\n\n\nRoom with O" +
+    "pen bed\n328 -W3\n330-W4\n102 - SP";
 			// 
 			// btnAssignRoom
 			// 
@@ -116,6 +150,7 @@ namespace LakeridgeCommunityHospital
 			// 
 			// RoomNumber
 			// 
+			this.RoomNumber.DataPropertyName = "ROOM_NUMBER";
 			this.RoomNumber.HeaderText = "Room #";
 			this.RoomNumber.Name = "RoomNumber";
 			this.RoomNumber.ReadOnly = true;
@@ -123,6 +158,7 @@ namespace LakeridgeCommunityHospital
 			// 
 			// BedChar
 			// 
+			this.BedChar.DataPropertyName = "BED_CHAR";
 			this.BedChar.HeaderText = "Bed";
 			this.BedChar.Name = "BedChar";
 			this.BedChar.ReadOnly = true;
@@ -130,6 +166,7 @@ namespace LakeridgeCommunityHospital
 			// 
 			// RoomType
 			// 
+			this.RoomType.DataPropertyName = "ROOM_TYPE_NUMBER";
 			this.RoomType.HeaderText = "Room Type";
 			this.RoomType.Name = "RoomType";
 			this.RoomType.ReadOnly = true;
@@ -147,21 +184,104 @@ namespace LakeridgeCommunityHospital
 			this.DateFree.ReadOnly = true;
 			this.DateFree.Width = 150;
 			// 
-			// richTextBox1
+			// lakeRidgeHospitalDataSet
 			// 
-			this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.richTextBox1.Location = new System.Drawing.Point(6, 19);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(393, 450);
-			this.richTextBox1.TabIndex = 0;
-			this.richTextBox1.Text = "Total Number of Bed per Room type \nSP -  5\nIC - 1\nW3 - 6\nW4- 4\nPR-1\n\n\nRoom with O" +
-    "pen bed\n328 -W3\n330-W4\n102 - SP";
+			this.lakeRidgeHospitalDataSet.DataSetName = "LakeRidgeHospitalDataSet";
+			this.lakeRidgeHospitalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.AllowUserToAddRows = false;
+			this.dataGridView2.AllowUserToDeleteRows = false;
+			this.dataGridView2.AutoGenerateColumns = false;
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rOOMTYPEIDDataGridViewTextBoxColumn,
+            this.dESCRIPTIONDataGridViewTextBoxColumn});
+			this.dataGridView2.DataSource = this.rOOMTYPEBindingSource;
+			this.dataGridView2.Location = new System.Drawing.Point(25, 587);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.ReadOnly = true;
+			this.dataGridView2.Size = new System.Drawing.Size(255, 150);
+			this.dataGridView2.TabIndex = 5;
+			// 
+			// rOOMTYPEIDDataGridViewTextBoxColumn
+			// 
+			this.rOOMTYPEIDDataGridViewTextBoxColumn.DataPropertyName = "ROOM_TYPE_ID";
+			this.rOOMTYPEIDDataGridViewTextBoxColumn.HeaderText = "ROOM_TYPE_ID";
+			this.rOOMTYPEIDDataGridViewTextBoxColumn.Name = "rOOMTYPEIDDataGridViewTextBoxColumn";
+			this.rOOMTYPEIDDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// dESCRIPTIONDataGridViewTextBoxColumn
+			// 
+			this.dESCRIPTIONDataGridViewTextBoxColumn.DataPropertyName = "DESCRIPTION";
+			this.dESCRIPTIONDataGridViewTextBoxColumn.HeaderText = "DESCRIPTION";
+			this.dESCRIPTIONDataGridViewTextBoxColumn.Name = "dESCRIPTIONDataGridViewTextBoxColumn";
+			this.dESCRIPTIONDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// rOOMTYPEBindingSource
+			// 
+			this.rOOMTYPEBindingSource.DataMember = "ROOM_TYPE";
+			this.rOOMTYPEBindingSource.DataSource = this.lakeRidgeHospitalDataSet;
+			// 
+			// rOOM_TYPETableAdapter
+			// 
+			this.rOOM_TYPETableAdapter.ClearBeforeFill = true;
+			// 
+			// dataGridView3
+			// 
+			this.dataGridView3.AllowUserToAddRows = false;
+			this.dataGridView3.AllowUserToDeleteRows = false;
+			this.dataGridView3.AutoGenerateColumns = false;
+			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.rOOMNUMBERDataGridViewTextBoxColumn,
+            this.bEDCHARDataGridViewTextBoxColumn,
+            this.eXTENSIONDataGridViewTextBoxColumn});
+			this.dataGridView3.DataSource = this.bEDBindingSource;
+			this.dataGridView3.Location = new System.Drawing.Point(354, 587);
+			this.dataGridView3.Name = "dataGridView3";
+			this.dataGridView3.ReadOnly = true;
+			this.dataGridView3.Size = new System.Drawing.Size(383, 150);
+			this.dataGridView3.TabIndex = 6;
+			// 
+			// rOOMNUMBERDataGridViewTextBoxColumn
+			// 
+			this.rOOMNUMBERDataGridViewTextBoxColumn.DataPropertyName = "ROOM_NUMBER";
+			this.rOOMNUMBERDataGridViewTextBoxColumn.HeaderText = "ROOM_NUMBER";
+			this.rOOMNUMBERDataGridViewTextBoxColumn.Name = "rOOMNUMBERDataGridViewTextBoxColumn";
+			this.rOOMNUMBERDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// bEDCHARDataGridViewTextBoxColumn
+			// 
+			this.bEDCHARDataGridViewTextBoxColumn.DataPropertyName = "BED_CHAR";
+			this.bEDCHARDataGridViewTextBoxColumn.HeaderText = "BED_CHAR";
+			this.bEDCHARDataGridViewTextBoxColumn.Name = "bEDCHARDataGridViewTextBoxColumn";
+			this.bEDCHARDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// eXTENSIONDataGridViewTextBoxColumn
+			// 
+			this.eXTENSIONDataGridViewTextBoxColumn.DataPropertyName = "EXTENSION";
+			this.eXTENSIONDataGridViewTextBoxColumn.HeaderText = "EXTENSION";
+			this.eXTENSIONDataGridViewTextBoxColumn.Name = "eXTENSIONDataGridViewTextBoxColumn";
+			this.eXTENSIONDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// bEDBindingSource
+			// 
+			this.bEDBindingSource.DataMember = "BED";
+			this.bEDBindingSource.DataSource = this.lakeRidgeHospitalDataSet;
+			// 
+			// bEDTableAdapter
+			// 
+			this.bEDTableAdapter.ClearBeforeFill = true;
 			// 
 			// RoomUtilizationDashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1162, 834);
+			this.Controls.Add(this.dataGridView3);
+			this.Controls.Add(this.dataGridView2);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.btnDischargeRoom);
 			this.Controls.Add(this.btnAssignRoom);
@@ -172,6 +292,11 @@ namespace LakeridgeCommunityHospital
 			this.Load += new System.EventHandler(this.RoomUtilizationDashboard_Load);
 			this.gbxRoomStats.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.lakeRidgeHospitalDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.rOOMTYPEBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bEDBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -183,11 +308,23 @@ namespace LakeridgeCommunityHospital
         private MaterialSkin.Controls.MaterialButton btnAssignRoom;
         private MaterialSkin.Controls.MaterialButton btnDischargeRoom;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BedChar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomType;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsOccupied;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateFree;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
+		private System.Windows.Forms.DataGridViewTextBoxColumn BedChar;
+		private System.Windows.Forms.DataGridViewTextBoxColumn RoomType;
+		private System.Windows.Forms.DataGridViewCheckBoxColumn IsOccupied;
+		private System.Windows.Forms.DataGridViewTextBoxColumn DateFree;
+		private MaterialSkin.Controls.MaterialMultiLineTextBox rtBoxStats;
+		private LakeRidgeHospitalDataSet lakeRidgeHospitalDataSet;
+		private System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.BindingSource rOOMTYPEBindingSource;
+		private LakeRidgeHospitalDataSetTableAdapters.ROOM_TYPETableAdapter rOOM_TYPETableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rOOMTYPEIDDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPTIONDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridView dataGridView3;
+		private System.Windows.Forms.BindingSource bEDBindingSource;
+		private LakeRidgeHospitalDataSetTableAdapters.BEDTableAdapter bEDTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn rOOMNUMBERDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn bEDCHARDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn eXTENSIONDataGridViewTextBoxColumn;
 	}
 }

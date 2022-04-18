@@ -52,18 +52,20 @@ namespace LakeridgeCommunityHospital
 
 
 
-		//private void FillDVG()
-		//{
-
-		//}
+		
 
 		private void RoomUtilizationDashboard_Load(object sender, EventArgs e)
 		{
+			// TODO: This line of code loads data into the 'lakeRidgeHospitalDataSet.BED' table. You can move, or remove it, as needed.
+			this.bEDTableAdapter.Fill(this.lakeRidgeHospitalDataSet.BED);
+			// TODO: This line of code loads data into the 'lakeRidgeHospitalDataSet.ROOM_TYPE' table. You can move, or remove it, as needed.
+			this.rOOM_TYPETableAdapter.Fill(this.lakeRidgeHospitalDataSet.ROOM_TYPE);
+			// TODO: This line of code loads data into the 'lakeRidgeHospitalDataSet.USER_TYPE' table. You can move, or remove it, as needed.
 			try
 			{
-				string connection = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+				 string connection = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
 
-				string sqlStatement = "SELECT r.ROOM_NUMBER , r.ROOM_TYPE, b.BED_CHAR FROM ROOM r , BED b  WHERE r.ROOM_NUMBER = b.ROOM_NUMBER";
+				string sqlStatement = " SELECT r.ROOM_NUMBER , r.ROOM_TYPE_NUMBER, b.BED_CHAR FROM LakeRidgeHospital.dbo.ROOM r , LakeRidgeHospital.dbo.BED b  WHERE r.ROOM_NUMBER = b.ROOM_NUMBER";
 				SqlConnection cn = new SqlConnection(connection);
 				cn.Open();
 				SqlCommand command = new SqlCommand(sqlStatement, cn);
@@ -80,5 +82,9 @@ namespace LakeridgeCommunityHospital
 				MessageBox.Show(ex.ToString());
 			}
 		}
+
+
+
+
 	}
 }
